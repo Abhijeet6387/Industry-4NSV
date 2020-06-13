@@ -1,6 +1,6 @@
 doctype html
 head
-  title Industry-4NSV | Introduction
+  title Industry-4NSV | Contact
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
@@ -56,23 +56,26 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
         a.nav-link(href='componentdetailform.html')
           b Component Detail Form 
           a
-.card.container.mt-5.mb-5
-  .card-body(style='display: block;\
+div(style='background-color: #f0f0f0;')
+  #cont.pt-5.pb-5(style='display: block;\
   margin-left : auto;\
   margin-right: auto;\
-  width: 25%')
-    form(action='http://localhost:3000/event/addevent' method ='post')
-      .form-group
-        label(for='Title') Title:
-        input#Title.form-control(type='text' placeholder='Enter Title' name='Title')
-      .form-group.pb-3
-        label(for='Description') Description:
-        input#Description.form-control(type='text' placeholder='Enter Description' name='Description')
-      button.block(type='submit' style=' display: block;\
-      width: 100%;\
-      border: none;\
-      background-color:#aaa;\
-      padding: 14px 28px;\
-      font-size: 16px;\
-      cursor: pointer;\
-      text-align: center;') Submit
+  width: 50%')
+    .container
+      .card.mt-2
+        .card-body
+          div
+            h5.pb-3.pt-3(style='text-align: center;') Address
+            h6(style='text-align: center;') Secretariat of the Council
+            p(style='text-align: center;')
+              | ABV-Indian Institute of Information Technology and Management
+              | Morena Link Road, Gwalior
+              | Madhya Pradesh,
+              | 474015,
+              | India
+          div
+            h5.pb-1(style='text-align: center;') Email
+            p(style='text-align: center;') jagdish@iiitm.ac.in
+          div
+            h6(style='text-align: center;') Contact
+            p(style='text-align: center;') +91-751-2449709

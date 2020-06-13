@@ -1,6 +1,6 @@
 doctype html
 head
-  title Industry-4NSV | Tables
+  title Industry-4NSV | News &amp; Events
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
@@ -29,38 +29,37 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
   #collapsibleNavbar.collapse.navbar-collapse
     ul.navbar-nav
       li.nav-item
-        a.nav-link(href='http:localhost:3000/public/introduction.html')
+        a.nav-link(href='introduction.html')
           b Home
       li.nav-item
-        a.nav-link(href='http:localhost:3000/public/about.html#abt')
+        a.nav-link(href='about.html#abt')
           b About
       li.nav-item
-        a.nav-link(href='http:localhost:3000/public/events.html#evnt')
+        a.nav-link(href='event_list.html')
           b News &amp; Events
       li.nav-item.dropdown
         a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
           b Implementation Details
         .dropdown-menu
-          a.dropdown-item(href='http:localhost:3000/public/layouts.html#layout') Layouts
-          a.dropdown-item(href='http:localhost:3000/public/LHBCoachShellManufacture.html#lhb') LHB Coach Shell Manufacture
-          a.dropdown-item(href='http:localhost:3000/public/tables.html#table') Tables
-          a.dropdown-item(href='http:localhost:3000/public/Implementation and architecture.html#ia')  Implementation and Architecture
+          a.dropdown-item(href='layouts.html#layout') Layouts
+          a.dropdown-item(href='LHBCoachShellManufacture.html#lhb') LHB Coach Shell Manufacture
+          a.dropdown-item(href='tables.html#table') Tables
+          a.dropdown-item(href='Implementation and architecture.html#ia')  Implementation and Architecture
       li.nav-item
-        a.nav-link(href='http:localhost:3000/public/more details.html#md')
+        a.nav-link(href='more details.html#md')
           b More Details
       li.nav-item
-        a.nav-link(href='http:localhost:3000/public/contact.html#cont')
+        a.nav-link(href='contact.html#cont')
           b Contact
           a
-.card
-  .card-body
-    form(action='/http:localhost:3000/component/getcomponent' method='get' target='_blank')
-      label(for='Level') Level:
-      input#Level(type='text' name='Level')
-      br
-      br
-      label(for='Item') Item:
-      input#Item(type='text' name='Item')
-      br
-      br
-      input(type='submit' value='Submit')
+      li.nav-item
+        a.nav-link(href='componentdetailform.html')
+          b Component Detail Form 
+          a
+.container
+ for item in event
+  .card.mt-4
+    .card-body
+      h5.card-title #{ item.Title}
+      p.card-text  #{item.Description}
+

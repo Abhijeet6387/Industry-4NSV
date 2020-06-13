@@ -1,6 +1,6 @@
 doctype html
 head
-  title Industry-4NSV | Introduction
+  title Industry-4NSV | Component Detail Form
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
@@ -56,23 +56,40 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
         a.nav-link(href='componentdetailform.html')
           b Component Detail Form 
           a
-.card.container.mt-5.mb-5
-  .card-body(style='display: block;\
-  margin-left : auto;\
-  margin-right: auto;\
-  width: 25%')
-    form(action='http://localhost:3000/event/addevent' method ='post')
-      .form-group
-        label(for='Title') Title:
-        input#Title.form-control(type='text' placeholder='Enter Title' name='Title')
-      .form-group.pb-3
-        label(for='Description') Description:
-        input#Description.form-control(type='text' placeholder='Enter Description' name='Description')
-      button.block(type='submit' style=' display: block;\
-      width: 100%;\
-      border: none;\
-      background-color:#aaa;\
-      padding: 14px 28px;\
-      font-size: 16px;\
-      cursor: pointer;\
-      text-align: center;') Submit
+.container
+  .card.mt-5.mb-5
+    .card-body(style='display: block;\
+    margin-left : auto;\
+    margin-right: auto;\
+    width: 25%')
+      form(action='/component/getcomponentdetails' method='get' target='_blank')
+        .form-group
+          label(for='Level') Level:
+          input#Level.form-control(type='text' placeholder='Enter Level' name='Level')
+        .form-group.pb-3
+          label(for='Item') Item:
+          input#Item.form-control(type='text' placeholder='Enter Item' name='Item')
+        button.block(type='submit' style=' display: block;\
+        width: 100%;\
+        border: none;\
+        background-color:#aaa;\
+        padding: 14px 28px;\
+        font-size: 16px;\
+        cursor: pointer;\
+        text-align: center;') Submit
+  .row
+    .container
+      table.table
+        thead.thead-dark
+          tr
+            th(scope='col') Level
+            th(scope='col') Item
+            th(scope='col') Drawing_number
+            th(scope='col') Description
+        tbody
+         for item in component
+          tr
+            th(scope='row') #{item.Level}
+            td #{item.Item}
+            td #{item.Description}
+            td #{item.Drawing_number}

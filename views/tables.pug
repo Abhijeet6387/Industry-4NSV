@@ -1,6 +1,6 @@
 doctype html
 head
-  title Industry-4NSV | Introduction
+  title Industry-4NSV | Tables
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
@@ -56,23 +56,15 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
         a.nav-link(href='componentdetailform.html')
           b Component Detail Form 
           a
-.card.container.mt-5.mb-5
-  .card-body(style='display: block;\
-  margin-left : auto;\
-  margin-right: auto;\
-  width: 25%')
-    form(action='http://localhost:3000/event/addevent' method ='post')
-      .form-group
-        label(for='Title') Title:
-        input#Title.form-control(type='text' placeholder='Enter Title' name='Title')
-      .form-group.pb-3
-        label(for='Description') Description:
-        input#Description.form-control(type='text' placeholder='Enter Description' name='Description')
-      button.block(type='submit' style=' display: block;\
-      width: 100%;\
-      border: none;\
-      background-color:#aaa;\
-      padding: 14px 28px;\
-      font-size: 16px;\
-      cursor: pointer;\
-      text-align: center;') Submit
+#table.container-fluid.mt-3.mb-3.text-center
+  .row
+    .col-6
+      h5.mb-3.mt-5  Work Centers for Shell Manufacture
+      .card.mb-5
+        .card-body
+          img.img-fluid(src='./images/table1.png')
+    .col-6
+      h5.mb-3.mt-5  Details of Machines &amp; Controllers
+      .card.mb-5
+        .card-body
+          img.img-fluid(src='./images/table2.png')

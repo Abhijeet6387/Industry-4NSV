@@ -24,7 +24,7 @@ router.get('/getevent',(req,res) =>{
       }
       else{
         console.log(event)                    
-        res.render("eventlist", {event: event});
+        res.render("event_list", {event: event});
       }
        });                                          
      

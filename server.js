@@ -29,15 +29,38 @@ app.set('views', __dirname + '/views');
 app.use('/public', express.static(__dirname + '/public'));
 
 
+
+
 app.get('/',(req,res)=>{
-    res.redirect('http://localhost:3000/public/introduction.html');
-   
+    res.render('introduction')
 })
+app.get('/about',(req,res)=>{
+    res.render('about')
+})
+
+app.get('/implementation/layouts',(req,res)=>{
+    res.render('layouts')
+})
+app.get('/implementation/LHBCoachShellManufacture',(req,res)=>{
+    res.render('LHBCoachShellManufacture')
+})
+app.get('/implementation/tables',(req,res)=>{
+    res.render('tables')
+})
+
+app.get('/implementation/architecture',(req,res)=>{
+    res.render('implementation and architecture')
+})
+app.get('/moredetails',(req,res)=>{
+    res.render('more details')
+})
+app.get('/contact',(req,res)=>{
+    res.render('contact')
+})
+
+
 app.use('/event',event_api);
 app.use('/component',component_api);
-
-
-
 
 mongoose.Promise=global.Promise;
 

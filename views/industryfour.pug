@@ -1,0 +1,116 @@
+doctype html
+head
+  title Industry-4NSV | Industry 4.0
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+  script(src='https://kit.fontawesome.com/a076d05399.js')
+  style.
+    .fakeimg {
+    height: 200px;
+    background:#aaa;
+    }
+div(style='background-color:black')
+  .container.text-center
+    .row
+      .col-2
+        img.img-fluid(src='./images/logo.png' alt='logo')
+      .col-8.pt-4
+        h1.pb-5.pt-3(style='color: white;') INDUSTRY 4-NSV
+      .col-2
+        img.img-fluid.pt-4(height='75px' width='100px' src='./images/emblem.png' alt='emblem')
+nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+  a.navbar-brand(href='#')
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+    span.navbar-toggler-icon
+  #collapsibleNavbar.collapse.navbar-collapse
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link(href='introduction.html')
+          b Home
+      li.nav-item
+        a.nav-link(href='about.html#abt')
+          b About
+      li.nav-item
+        a.nav-link(href='event_list.html')
+          b News &amp; Events
+      li.nav-item.dropdown
+        a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+          b Implementation Details
+        .dropdown-menu
+          a.dropdown-item(href='layouts.html#layout') Layouts
+          a.dropdown-item(href='LHBCoachShellManufacture.html#lhb') LHB Coach Shell Manufacture
+          a.dropdown-item(href='tables.html#table') Tables
+          a.dropdown-item(href='Implementation and architecture.html#ia')  Implementation and Architecture
+      li.nav-item
+        a.nav-link(href='more details.html#md')
+          b More Details
+      li.nav-item
+        a.nav-link(href='contact.html#cont')
+          b Contact
+          a
+      li.nav-item
+        a.nav-link(href='componentdetailform.html')
+          b Component Detail Form 
+          a
+.pt-5.pb-5(style='background-color: lightblue;')
+  .container
+    .card(style='background-color: #f0f0f0;')
+      .card-body
+        .container
+          h5.pb-3.pt-3
+            b Industry 4.0 
+          div
+            | Industry 4.0 is projected as the fourth industrial revolution (Hannover Messe, 2011) promotes computerisation of manufacturing
+            ul
+              li
+                | Strong customization of products under the conditions of highly flexible (mass) production
+              li
+                | Introduction of methods of self-optimization, self-configuration, self-diagnosis, cognition and intelligent support of workers in their increasingly complex work
+          div
+            h5.pb-3
+              b Four Design Principles in Industry 4.0
+            ul
+              li
+                b Interconnection:  
+                |    The ability of machines, devices, sensors, and people to connect and communicate with each other via the Internet of Things (IoT) or the Internet of People (IoP)
+              li
+                b Information transparency:  
+                |   provides operators with vast amounts of useful information needed to make appropriate decisions.
+              li
+                b Technical assistance:  
+                |  assistance systems by aggregating and visualizing information comprehensively for making informed decisions and to physically support humans by conducting unpleasant, exhausting and unsafe tasks for human workers.
+              li
+                b Decentralized decisions:  
+                | ability of cyber physical systems to make decisions on their own and to perform their tasks as autonomously as possible
+          .container
+            h5.pb-3
+              b National Policy for Advanced Manufacturing (NPAM)
+            ul
+              li Envisages that manufacturing should constitute at least 25% of GDP.
+              li
+                | This initiative of the 
+                b Technology Mission for the Indian Railways 
+                | will help enable exponential increase in manufacturing in India with minimal expenditure.
+          .container
+            h5.pb-3
+              b Technology Domains
+            ul
+              li Cyber-Physical Architecture of Industry 4.0 is complex 
+              li
+                | Architecture is of vital importance for it to get kick started initially and expanded gradually in a phased manner the architecture as conceptualized and formulated in MCF should be replicable .
+              li
+                | Inter-disciplinary technology includes &ndash;
+                ul
+                  li Internet of Things, Cloud Computing and Cognitive Computing
+                  li Component and System Design &amp; Dynamics
+                  li Manufacturing Processes
+                  li Quality Control
+                  li Sensors
+                  li Data Acquisition
+                  li Signal Processing
+                  li Neural Networks, Multi-Objective Optimisatiopn, Fuzzy Logic
+                  li Reliability, Availability, Maintainability, Sustainability (RAMS)

@@ -1,6 +1,6 @@
 doctype html
 head
-  title Industry-4NSV | Introduction
+  title Industry-4NSV | Layouts
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
@@ -56,23 +56,17 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
         a.nav-link(href='componentdetailform.html')
           b Component Detail Form 
           a
-.card.container.mt-5.mb-5
-  .card-body(style='display: block;\
-  margin-left : auto;\
-  margin-right: auto;\
-  width: 25%')
-    form(action='http://localhost:3000/event/addevent' method ='post')
-      .form-group
-        label(for='Title') Title:
-        input#Title.form-control(type='text' placeholder='Enter Title' name='Title')
-      .form-group.pb-3
-        label(for='Description') Description:
-        input#Description.form-control(type='text' placeholder='Enter Description' name='Description')
-      button.block(type='submit' style=' display: block;\
-      width: 100%;\
-      border: none;\
-      background-color:#aaa;\
-      padding: 14px 28px;\
-      font-size: 16px;\
-      cursor: pointer;\
-      text-align: center;') Submit
+.container
+  #layout.container
+    .card.mb-3.mt-5
+      .card-body
+        h4.text-center.pt-3.pb-2
+          b Pilot Shopfloor
+        h6.text-center.pb-3 Shell Shop Layout
+        img.img-fluid(src='/public/images/shellShopLayout.png' style='vertical-align:middle;margin:20px 0px;')
+  .container
+    .card.mb-5.mt-3
+      .card-body
+        h4.text-center.pt-3.pb-3
+          b MCF OFC Layout
+        img.img-fluid(src='/public/images/MCF_OFC_LAYOUT.png' style='vertical-align:middle;margin:20px 0px;')

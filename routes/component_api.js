@@ -8,30 +8,30 @@ var path = require("path")
 router.get('/addcomponent',(req,res)=>{
 
     console.log( "add component form needs to linked");
-    res.render('component_form')   
+    res.render('addcomponentform')   
   
 })
 
 router.get('/getcomponentform',(req,res)=>{
 
     console.log( "add component form needs to linked");
-    res.render('component_form') 
+    res.render('componentdetailform') 
       
   
 })
 
-router.get('/getcomponentdetails',(req,res) =>{              
+router.get('/getcomponentdetails',(req,res) =>{   
+    console.log("hey")           
     Component.find({ Level: req.query.Level, Item: req.query.Item})                                    
    
    
-    .exec(function(err,component){                              
-      if(err){console.log("error in retrieving events");    
-      }
-      else{
+    .then(function(component){                              
+      
+     
         console.log(component)                    
-        res.render("componentlist", {component: component});
-      }
-       });                                          
+        res.render("componentdetailform", {component: component});
+         
+       }).catch(err=>console.log('the error is' +err));                                          
      
     
 });
