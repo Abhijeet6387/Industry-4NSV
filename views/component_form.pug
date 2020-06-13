@@ -1,0 +1,66 @@
+doctype html
+head
+  title Industry-4NSV | Tables
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+  script(src='https://kit.fontawesome.com/a076d05399.js')
+  style.
+    .fakeimg {
+    height: 200px;
+    background:#aaa;
+    }
+div(style='background-color:black')
+  .container.text-center
+    .row
+      .col-2
+        img.img-fluid(src='./images/logo.png' alt='logo')
+      .col-8.pt-4
+        h1.pb-5.pt-3(style='color: white;') INDUSTRY 4-NSV
+      .col-2
+        img.img-fluid.pt-4(height='75px' width='100px' src='./images/emblem.png' alt='emblem')
+nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+  a.navbar-brand(href='#')
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+    span.navbar-toggler-icon
+  #collapsibleNavbar.collapse.navbar-collapse
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link(href='http:localhost:3000/public/introduction.html')
+          b Home
+      li.nav-item
+        a.nav-link(href='http:localhost:3000/public/about.html#abt')
+          b About
+      li.nav-item
+        a.nav-link(href='http:localhost:3000/public/events.html#evnt')
+          b News &amp; Events
+      li.nav-item.dropdown
+        a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+          b Implementation Details
+        .dropdown-menu
+          a.dropdown-item(href='http:localhost:3000/public/layouts.html#layout') Layouts
+          a.dropdown-item(href='http:localhost:3000/public/LHBCoachShellManufacture.html#lhb') LHB Coach Shell Manufacture
+          a.dropdown-item(href='http:localhost:3000/public/tables.html#table') Tables
+          a.dropdown-item(href='http:localhost:3000/public/Implementation and architecture.html#ia')  Implementation and Architecture
+      li.nav-item
+        a.nav-link(href='http:localhost:3000/public/more details.html#md')
+          b More Details
+      li.nav-item
+        a.nav-link(href='http:localhost:3000/public/contact.html#cont')
+          b Contact
+          a
+.card
+  .card-body
+    form(action='/http:localhost:3000/component/getcomponent' method='get' target='_blank')
+      label(for='Level') Level:
+      input#Level(type='text' name='Level')
+      br
+      br
+      label(for='Item') Item:
+      input#Item(type='text' name='Item')
+      br
+      br
+      input(type='submit' value='Submit')
