@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
-const db = "mongodb+srv://aditya:Sriganesh@3@cluster0-knzmq.mongodb.net/test"
+const db = process.env.MONGOLAB_URI
 const event_api=require("./routes/event_api");
 const component_api=require("./routes/component_api");
 const path=require("path");
@@ -75,7 +75,7 @@ mongoose.connect(db,{useNewUrlParser:true,useUnifiedTopology:true},(err)=>{
 
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT||3000, () => {
   console.log("Server is listening on port: 3000");
 });
 
