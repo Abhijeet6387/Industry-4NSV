@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
-const db = process.env.MONGOLAB_URI
+const db = process.env.MONGODB_URI
 const event_api=require("./routes/event_api");
 const component_api=require("./routes/component_api");
 const path=require("path");
@@ -10,7 +10,7 @@ const path=require("path");
 
 
 
-
+console.log(db)
 
 app.use(bodyParser.urlencoded({
     extended:false             
