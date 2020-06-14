@@ -1,6 +1,6 @@
 doctype html
 head
-  title Industry-4NSV | Component Detail Form
+  title Industry-4NSV | About
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
@@ -29,40 +29,39 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
   #collapsibleNavbar.collapse.navbar-collapse
     ul.navbar-nav
       li.nav-item
-        a.nav-link(href='introduction.html')
+        a.nav-link(href='http://localhost:3000/')
           b Home
       li.nav-item
-        a.nav-link(href='about.html#abt')
+        a.nav-link(href='http://localhost:3000/about')
           b About
       li.nav-item
-        a.nav-link(href='event_list.html')
+        a.nav-link(href='http://localhost:3000/event/getevent')
           b News &amp; Events
       li.nav-item.dropdown
         a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
           b Implementation Details
         .dropdown-menu
-          a.dropdown-item(href='layouts.html#layout') Layouts
-          a.dropdown-item(href='LHBCoachShellManufacture.html#lhb') LHB Coach Shell Manufacture
-          a.dropdown-item(href='tables.html#table') Tables
-          a.dropdown-item(href='Implementation and architecture.html#ia')  Implementation and Architecture
+          a.dropdown-item(href='http://localhost:3000/implementation/layouts') Layouts
+          a.dropdown-item(href='http://localhost:3000/implementation/LHBCoachShellManufacture') LHB Coach Shell Manufacture
+          a.dropdown-item(href='http://localhost:3000/implementation/tables') Tables
+          a.dropdown-item(href='http://localhost:3000/implementation/architecture')  Implementation and Architecture
       li.nav-item
-        a.nav-link(href='more details.html#md')
+        a.nav-link(href='http://localhost:3000/moredetails')
           b More Details
       li.nav-item
-        a.nav-link(href='contact.html#cont')
+        a.nav-link(href='http://localhost:3000/contact')
           b Contact
-          a
       li.nav-item
-        a.nav-link(href='componentdetailform.html')
+        a.nav-link(href='http://localhost:3000/component/getcomponentform#tb')
           b Component Detail Form 
-          a
+          
 .container
   .card.mt-5.mb-5
     .card-body(style='display: block;\
     margin-left : auto;\
     margin-right: auto;\
     width: 25%')
-      form(action='/component/getcomponentdetails' method='get' target='_blank')
+      form(action='/component/getcomponentdetails#tb' method='get' target='_blank')
         .form-group
           label(for='Level') Level:
           input#Level.form-control(type='text' placeholder='Enter Level' name='Level')
@@ -78,7 +77,7 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
         cursor: pointer;\
         text-align: center;') Submit
   .row
-    .container
+    #tb.container
       table.table
         thead.thead-dark
           tr
@@ -87,9 +86,10 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
             th(scope='col') Drawing_number
             th(scope='col') Description
         tbody
-         for item in component
-          tr
-            th(scope='row') #{item.Level}
-            td #{item.Item}
-            td #{item.Description}
-            td #{item.Drawing_number}
+         if component
+          for item in component
+           tr
+             th(scope='row') #{item.Level}
+             td #{item.Item}
+             td #{item.Drawing_number}
+             td #{item.Description}
