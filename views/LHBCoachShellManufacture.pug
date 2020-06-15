@@ -1,6 +1,6 @@
 doctype html
 head
-  title Industry-4NSV | About
+  title Industry-4NSV | Introduction
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
@@ -9,60 +9,34 @@ head
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
   script(src='https://kit.fontawesome.com/a076d05399.js')
   style.
-    .fakeimg {
-    height: 200px;
-    background:#aaa;
+    body {
+      background-color: #f0f0f5;
     }
-div(style='background-color:#CD5C5C')
+    li a{
+    color: #000000;
+    }
+    li a:hover {
+    background-color: #e0e0eb;
+    color: #cd5c5c;
+    }
+div(style='background-color:  #cd5c5c;')
   .container.text-center
     .row
       .col-2
-        img.img-fluid(src='./images/logo.png' alt='logo')
+        img.img-fluid(src='/public/images/logo.png' alt='logo')
       .col-8.pt-4
-        h1.pb-5.pt-3(style='color: white;') INDUSTRY 4-NSV
+        h1.pb-5.pt-3(style='color:#f0f0f5; text-shadow: 8px 8px 16px #000000;')
+          b INDUSTRY 4-NSV
       .col-2
-        img.img-fluid.pt-4(height='75px' width='100px' src='./images/emblem.png' alt='emblem')
-nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
-  a.navbar-brand(href='#')
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
-    span.navbar-toggler-icon
-  #collapsibleNavbar.collapse.navbar-collapse
-    ul.navbar-nav
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/')
-          b Home
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/about')
-          b About
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/event/getevent')
-          b News &amp; Events
-      li.nav-item.dropdown
-        a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-          b Implementation Details
-        .dropdown-menu
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/layouts') Layouts
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/LHBCoachShellManufacture') LHB Coach Shell Manufacture
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/tables') Tables
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/architecture')  Implementation and Architecture
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/moredetails')
-          b More Details
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/contact')
-          b Contact
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/component/getcomponentform#tb')
-          b Component Detail Form 
-          
- 
+        img.img-fluid.pt-4(height='75px' width='100px' src='/public/images/emblem.png' alt='emblem')
+include navbar.pug
 #lhb.container.mt-5
   h3.text-center.pt-4.pb-4 LHB Coach Shell Manufacture
   img.img-fluid(src='/public/images/LHBCoachShellManufacture.png' style='display: block;\
   margin-left : auto;\
   margin-right: auto;\
   width: 80%')
-.container-fluid.mt-5
+.container-fluid.mt-5.mb-5
   .row
     .col-3
       .container-fluid.text-center
@@ -71,28 +45,27 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
           // Indicators
           .carousel-inner
             .carousel-item.active
-              h6(style=' font-size: 14px') Step1. Manual Tack Welding Station
+              h6(style=' font-size: 14px') 1. Manual Tack Welding Station
               img.img-fluid(src='/public/images/side1.png' alt='side 1')
               p(style=' font-size: 14px') Tack Welding Of Side Wall Skin With Frame
             .carousel-item
-              h6(style=' font-size: 14px') Step2. Robotic Skelton Welding Station
+              h6(style=' font-size: 14px') 2. Robotic Skelton Welding Station
               img.img-fluid(src='/public/images/side2.png' alt='side 2')
               p(style=' font-size: 14px') Full Mig Welding Of Frame Members
             .carousel-item
-              h6(style=' font-size: 14px') Step3. Robotic Spot Welding Station
+              h6(style=' font-size: 14px') 3. Robotic Spot Welding Station
               img.img-fluid(src='/public/images/side3.png' alt='side 3')
               p(style=' font-size: 14px') Spot Welding Of Side Wall Skin With Frame
             .carousel-item
-              h6(style=' font-size: 14px') Step4. Robotic Roof Bearer Fabrication
+              h6(style=' font-size: 14px') 4. Robotic Roof Bearer Fabrication
               img.img-fluid(src='/public/images/side4.png' alt='side 4')
               p(style=' font-size: 14px') Complete Mig And Spot Welding Of Stiffner With Carline
             .carousel-item
-              h6(style=' font-size: 14px') Step5. Sidewall And Roof Bearer Welding
+              h6(style=' font-size: 14px') 5. Sidewall And Roof Bearer Welding
               img.img-fluid(src='/public/images/side5.png' alt='side 5')
               p(style=' font-size: 14px') Welding Of Roof Bearer With Sidewall
             .carousel-item
-              h6(style=' font-size: 14px') Step6. Manual Welding Station
-              br
+              h6(style=' font-size: 14px') 6. Manual Welding Station
               img.img-fluid(src='/public/images/side6.png' alt='side 6')
               p(style=' font-size: 14px') Back Piece Welding And Completion Of Work
           // Left and right controls
@@ -115,12 +88,12 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
               img.img-fluid(src='/public/images/top2.png' alt='top 2')
               p(style=' font-size: 14px') Spot Welded Roof Sheet Tacked With Front Sheet 
             .carousel-item
-              h6(style=' font-size: 14px') Step3. Robotic Mig Welding Station
-              img.img-fluid(src='/public/images/top2.png' alt='top 3')
+              h6(style=' font-size: 14px') 3. Robotic Mig Welding Station
+              img.img-fluid(src='/public/images/top3.png' alt='top 3')
               p(style=' font-size: 14px') Robotic Mig Welding of Roof Sheet and Back Pice
             .carousel-item
-              h6(style=' font-size: 14px') Step4. Manual Roof Completion Station
-              img.img-fluid(src='/public/images/top2.png' alt='top 4')
+              h6(style=' font-size: 14px') 4. Manual Roof Completion Station
+              img.img-fluid(src='/public/images/top4.png' alt='top 4')
               p(style=' font-size: 14px') Manual Touch Up for Complete Welding of Roof Sheet and  Carline
           // Left and right controls
           a.carousel-control-prev(href='#myCarousel3' data-slide='prev')
@@ -134,44 +107,44 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
           // Indicators
           .carousel-inner
             .carousel-item.active
-              h6(style=' font-size: 14px') Step1. Welding of Front Part Station
+              h6(style=' font-size: 14px') 1. Welding of Front Part Station
               img.img-fluid(src='/public/images/under1.png' alt='under 1')
               p(style=' font-size: 14px') Manual Tack Welding of Cross Member and Sub Assembly to Made A Front Part
             .carousel-item
-              h6(style=' font-size: 14px') Step2. Robotic Welding of Front Part Station
+              h6(style=' font-size: 14px') 2. Robotic Welding of Front Part Station
               img.img-fluid(src='/public/images/under2.png' alt='under 2')
               p(style=' font-size: 14px') Robotic Full Welding of Cross Member and Sub Assembly To Made A Front Part
             .carousel-item
-              h6(style=' font-size: 14px') Step3. Tack Welding Station Of Middle Part
+              h6(style=' font-size: 14px') 3. Tack Welding Station Of Middle Part
               img.img-fluid(src='/public/images/under3.png' alt='under 3')
               p(style=' font-size: 14px')
                 | Tack Welding of Front Part With Cross Member and Sub Assembly to Made A Middle Part
             .carousel-item
-              h6(style=' font-size: 14px') Step4. Robotic Full Welding Station Of Middle Part
+              h6(style=' font-size: 14px') 4. Robotic Full Welding Station Of Middle Part
               img.img-fluid(src='/public/images/under4.png' alt='under 4')
               p(style=' font-size: 14px') Robotic Full Welding  of Midlle Part
             .carousel-item
-              h6(style=' font-size: 14px') Step5. Welding of Trough Floor Station
+              h6(style=' font-size: 14px') 5. Welding of Trough Floor Station
               img.img-fluid(src='/public/images/under5.png' alt='under 5')
               p(style=' font-size: 14px') Manual Tack Welding of Floor Sheet on Middle Part
             .carousel-item
-              h6(style=' font-size: 14px') Step6. Robotic Welding of Trough Floor Station  
+              h6(style=' font-size: 14px') 6. Robotic Welding of Trough Floor Station  
               img.img-fluid(src='/public/images/under6.png' alt='under 6')
               p(style=' font-size: 14px') Full Welding of Floor Sheet From Back Side with Middle Part
             .carousel-item
-              h6(style=' font-size: 14px') Step7. Plug welding of Trough Floor Station 
+              h6(style=' font-size: 14px') 7. Plug welding of Trough Floor Station 
               img.img-fluid(src='/public/images/under7.png' alt='under 7')
               p(style=' font-size: 14px') Full Welding of Floor Sheet on Top Side and Plug Welding
             .carousel-item
-              h6(style=' font-size: 14px') Step8. Manual Welding of Under slung Components  
+              h6(style=' font-size: 14px') 8. Manual Welding of Under slung Components  
               img.img-fluid(src='/public/images/under8.png' alt='under 8')
               p(style=' font-size: 14px') Manual Welding of Under Slung Parts and Console Bracket  etc.
             .carousel-item
-              h6(style=' font-size: 14px') Step9. Manual Welding  of Channel Part Station
+              h6(style=' font-size: 14px') 9. Manual Welding  of Channel Part Station
               img.img-fluid(src='/public/images/under9.png' alt='under 9')
               p(style=' font-size: 14px') Manual Welding  of Channel and Bracket at Top Side of Floor
             .carousel-item
-              h6(style=' font-size: 14px') Step10. Completion Station
+              h6(style=' font-size: 14px') 10. Completion Station
               img.img-fluid(src='/public/images/under10.png' alt='under 10')
               p(style=' font-size: 14px') Finishing and Completion Manually
           // Left and right controls
@@ -186,11 +159,11 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
           // Indicators
           .carousel-inner
             .carousel-item.active
-              h6(style=' font-size: 14px')  Step1. Tack Welding Station 
+              h6(style=' font-size: 14px')  1. Tack Welding Station 
               img.img-fluid(src='/public/images/end1.png' alt='end 1')
               p(style=' font-size: 14px') Tacking of Member Part and Assembly at Different Stages
             .carousel-item
-              h6(style=' font-size: 14px') Step2. Robotic Full Welding Station
+              h6(style=' font-size: 14px') 2. Robotic Full Welding Station
               img.img-fluid(src='/public/images/end2.png' alt='end 2')
               p(style=' font-size: 14px') Robotic Welding of Tacked Components of End Wall Part
           // Left and right controls

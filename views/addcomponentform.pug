@@ -1,6 +1,6 @@
 doctype html
 head
-  title Industry-4NSV | About
+  title Industry-4NSV | Component-form
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
@@ -9,52 +9,31 @@ head
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
   script(src='https://kit.fontawesome.com/a076d05399.js')
   style.
-    .fakeimg {
-    height: 200px;
-    background:#aaa;
+    body {
+      background-color: #f0f0f5;
     }
-div(style='background-color:#CD5C5C')
+    li a{
+    color: #000000;
+    }
+    li a:hover {
+    background-color: #e0e0eb;
+    color: #cd5c5c;
+    }
+    button :hover {
+    background-color: #f0f0f5;
+    color: #cd5c5c;
+    }
+div(style='background-color:  #cd5c5c;')
   .container.text-center
     .row
       .col-2
-        img.img-fluid(src='./images/logo.png' alt='logo')
+        img.img-fluid(src='/public/images/logo.png' alt='logo')
       .col-8.pt-4
-        h1.pb-5.pt-3(style='color: white;') INDUSTRY 4-NSV
+        h1.pb-5.pt-3(style='color:#f0f0f5; text-shadow: 8px 8px 16px #000000;')
+          b INDUSTRY 4-NSV
       .col-2
-        img.img-fluid.pt-4(height='75px' width='100px' src='./images/emblem.png' alt='emblem')
-nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
-  a.navbar-brand(href='#')
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
-    span.navbar-toggler-icon
-  #collapsibleNavbar.collapse.navbar-collapse
-    ul.navbar-nav
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/')
-          b Home
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/about')
-          b About
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/event/getevent')
-          b News &amp; Events
-      li.nav-item.dropdown
-        a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-          b Implementation Details
-        .dropdown-menu
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/layouts') Layouts
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/LHBCoachShellManufacture') LHB Coach Shell Manufacture
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/tables') Tables
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/architecture')  Implementation and Architecture
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/moredetails')
-          b More Details
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/contact')
-          b Contact
-      li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/component/getcomponentform#tb')
-          b Component Detail Form 
-
+        img.img-fluid.pt-4(height='75px' width='100px' src='/public/images/emblem.png' alt='emblem')
+include navbar.pug
 .container
   .card.mt-5.mb-5
     .card-body(style='display: block;\
@@ -64,7 +43,7 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
       form(action='/component/addcomponent' method='post' target='_blank')
         .form-group
           label(for='Level') Level:
-          input#Level.form-control(type='text' placeholder='Enter Level' name='Level')
+          input#Level.form-control(type='text' placeholder='Enter level' name='Level')
         .form-group
           label(for='Item') Item:
           input#Item.form-control(type='text' placeholder='Enter Item' name='Item')
@@ -77,8 +56,9 @@ nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
         button.block(type='submit' style=' display: block;\
         width: 100%;\
         border: none;\
-        background-color:#aaa;\
+        background-color:#f0f0f5;\
         padding: 14px 28px;\
         font-size: 16px;\
         cursor: pointer;\
-        text-align: center;') Submit
+        text-align: center;')
+          b Submit

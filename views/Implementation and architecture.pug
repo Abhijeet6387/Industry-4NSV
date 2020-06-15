@@ -1,0 +1,59 @@
+doctype html
+head
+  title Industry-4NSV
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+  script(src='https://kit.fontawesome.com/a076d05399.js')
+  style.
+    body {
+      background-color: #f0f0f5;
+    }
+    li a{
+    color: #000000;
+    }
+    li a:hover {
+    background-color: #e0e0eb;
+    color: #cd5c5c;
+    }
+div(style='background-color:  #cd5c5c;')
+  .container.text-center
+    .row
+      .col-2
+        img.img-fluid(src='/public/images/logo.png' alt='logo')
+      .col-8.pt-4
+        h1.pb-5.pt-3(style='color:#f0f0f5; text-shadow: 8px 8px 16px #000000;')
+          b INDUSTRY 4-NSV
+      .col-2
+        img.img-fluid.pt-4(height='75px' width='100px' src='/public/images/emblem.png' alt='emblem')
+include navbar.pug
+#ia.container-fluid.mt-5.mb-3
+  .row
+    .col-6.mt-1
+      img.img-fluid(src='/public/images/implementation overview.png' style='display: block;\
+      margin-left : auto;\
+      margin-right: auto;\
+      width: 80%')
+    .col-6
+      .container
+        h2.text-center.pb-3 Implementation
+        .container(style=' font-size: 18px;')
+          ul
+            li
+              | Various packages, systems, applications and Hardware within Design/Planning, Networking and Production to be added in a modular and incremental manner.
+            li
+              | Various shops within the industry establishment will be under the ambit of Industry 4.0 for areas such as Inspection, Machining, Welding, Measurement etc. These can further be divided into activities and work centres.
+            li
+              | The aggregation of the above in a Industry 4.0 generic application Package such as that which has been implemented in MCF.
+            li
+              | An add on ERP in Microsoft Dynamics to enable user friendly MIS through popular applications such as Word and Excel on desktop/smart phones.
+  .mt-5.pb-5.text-center(style='background-color: #cd5c5c;')
+    h2.pt-5.pb-5(style='color: #f0f0f5;text-shadow: 8px 8px 16px #000000;') Proposed Architecture
+    div
+      img.img-fluid(src='/public/images/proposed arch.png' style='display: block;\
+      margin-left : auto;\
+      margin-right: auto;\
+      width: 70%')
