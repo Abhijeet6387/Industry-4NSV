@@ -49,7 +49,7 @@ app.get('/implementation/tables',(req,res)=>{
 })
 
 app.get('/implementation/architecture',(req,res)=>{
-    res.render('Implementationandarchitecture')
+    res.render('Implementation and architecture')
 })
 app.get('/moredetails',(req,res)=>{
     res.render('more details')
