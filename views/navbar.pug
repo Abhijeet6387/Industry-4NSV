@@ -36,3 +36,24 @@ nav.navbar.navbar-expand-sm.navbar-light.bg-light
         .dropdown-menu
           a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/addevent') Add Event
           a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/addcomponent') Add Component
+#carouselExampleIndicators.carousel.slide(data-ride='carousel')
+  ol.carousel-indicators
+    li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+    li(data-target='#carouselExampleIndicators' data-slide-to='1')
+    li(data-target='#carouselExampleIndicators' data-slide-to='2')
+    li(data-target='#carouselExampleIndicators' data-slide-to='3')
+  .carousel-inner
+    .carousel-item.active
+      img.d-block.w-100(src='/public/images/scaleup.png' alt='First slide')
+    .carousel-item
+      img.d-block.w-100(src='/public/images/designTwinDesignInnovation.png' alt='Second slide')
+    .carousel-item
+      img.d-block.w-100(src='/public/images/designTwin.png' alt='Third slide')
+    .carousel-item
+      img.d-block.w-100(src='/public/images/integration.png' alt='Fourth slide')
+  a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+    span.carousel-control-prev-icon(aria-hidden='true')
+    span.sr-only Previous
+  a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+    span.carousel-control-next-icon(aria-hidden='true')
+    span.sr-only Next
