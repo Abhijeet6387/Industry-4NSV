@@ -13,7 +13,7 @@ head
     body {
       background-color: #f7f7f7;
     }
-    
+
 div(style='background-color:  #cd5c5c;')
   .container.text-center
     .row
@@ -25,26 +25,29 @@ div(style='background-color:  #cd5c5c;')
       .col-2
         img.img-fluid.pt-4(height='75px' width='100px' src='/pubic/images/emblem.png' alt='emblem')
 include navbar.pug
-div(style='background-color: #f7f7f7;')
-  #cont.pt-5.pb-5(style='display: block;\
-  margin-left : auto;\
-  margin-right: auto;\
-  width: 50%')
-  .container
-    .container(style='background-color: #ffffff')
-      .container-body
-        div
-          h5.pt-3.pb-2(style='text-align: center;') Address
-          p(style='text-align: center;')
-            | NL 103 (Northen Lab)
-            | Department of M.E.
-            | Indian Institute of Technology, Kanpur
-            | 208016, Uttar Pradesh,
-            | India
-        div
-          h5(style='text-align: center;') Contact
-          p(style='text-align: center;') 0512-2597040
-br
+.container.pt-4.pb-4(style='background-color: #ffffff')
+  include carousel.pug
+  div(style='background-color: #ffffff;')
+    #cont(style='display: block;\
+    margin-left : auto;\
+    margin-right: auto;\
+    width: 50%')
+    .container
+      .container(style='background-color: #ffffff')
+      
+        .container
+          div
+            h5(style='text-align: center;') Address
+            p(style='text-align: center;')
+              | NL 103 (Northen Lab)
+              | Department of M.E.
+              | Indian Institute of Technology, Kanpur
+              | 208016, Uttar Pradesh,
+              | India
+          div
+            h5(style='text-align: center;') Contact
+            p(style='text-align: center;') 0512-2597040
+  br
 footer(style='background-color:  #cd5c5c ; padding: 3px; color: #ffffff;')
   a(href='mailto:hege@example.com' style='color:#ffffff') Link
   br
