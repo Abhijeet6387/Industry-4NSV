@@ -35,6 +35,9 @@ include navbar.pug
     width: 25%')
       form(action='/component/addcomponent' method='post' target='_blank')
         .form-group
+          label(for='Listname') Listname:
+          input#Listname.form-control(type='text' placeholder='Enter listname' name='Listname')
+        .form-group
           label(for='Level') Level:
           input#Level.form-control(type='text' placeholder='Enter level' name='Level')
         .form-group

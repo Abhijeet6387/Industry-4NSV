@@ -22,7 +22,7 @@ router.get('/getcomponentform',(req,res)=>{
 
 router.get('/getcomponentdetails',(req,res) =>{   
     console.log("hey")           
-    Component.find({ Level: req.query.Level, Item: req.query.Item})                                    
+    Component.find({ Listname: req.query.Listname, Level: req.query.Level, Item: req.query.Item})                                    
    
    
     .then(function(component){                              
@@ -39,7 +39,7 @@ router.post('/addcomponent',(req,res) =>{
  
     const component = new Component({
         _id:new mongoose.Types.ObjectId(),
-       
+        Listname: req.body.Listname,
         Level: req.body.Level,
         Item: req.body.Item,
         Description: req.body.Description,

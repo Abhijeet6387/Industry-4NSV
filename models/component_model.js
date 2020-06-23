@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 const Schema=mongoose.Schema;
 
 const componentSchema = new Schema({
+    Listname:{
+        type:String, required:true
+    },
 
     Level:{
         type:String, required:true
