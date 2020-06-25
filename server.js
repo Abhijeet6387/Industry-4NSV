@@ -62,16 +62,16 @@ app.get('/contact',(req,res)=>{
 app.use('/event',event_api);
 app.use('/component',component_api);
 
-// mongoose.Promise=global.Promise;
+mongoose.Promise=global.Promise;
 
 
-// mongoose.connect(db,{useNewUrlParser:true,useUnifiedTopology:true},(err)=>{
-//     if(err){
-//         console.log(err)
-//     }
-//     else
-//     console.log("connected to db")
-// })
+mongoose.connect(db,{useNewUrlParser:true,useUnifiedTopology:true},(err)=>{
+    if(err){
+        console.log(err)
+    }
+    else
+    console.log("connected to db")
+})
 
 
 
