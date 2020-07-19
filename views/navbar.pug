@@ -1,39 +1,146 @@
-nav.navbar.navbar-expand-sm.navbar-light.bg-light
-  a.navbar-brand(href='#')
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+doctype html
+head
+  title Industry-4NSV 
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+  script(src='https://kit.fontawesome.com/a076d05399.js')
+  style.
+    a.dropdown-item:hover{
+    background-color:#f5dede;
+    color: #cd5c5c;
+    }
+    .footer {
+    background-color: #cd5c5c;
+    color: black;
+    margin: 0px auto;
+    padding: 20px 0px;
+    }
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand.mr-auto(href='#' style='color: #cd5c5c; font-size: 30px;')
+    img.img-fluid.pl-1.pr-1(src='/public/images/railwaylogo.jpg' width='50' height='50')
+    b INDUSTRY-4NSV
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#Navbar')
     span.navbar-toggler-icon
-  #collapsibleNavbar.collapse.navbar-collapse
-    ul.navbar-nav
+  #Navbar.collapse.navbar-collapse
+    ul.navbar-nav.ml-auto
       li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/')
-          b Home
+        a.nav-link(href='https://industry-4nsv.herokuapp.com/' style='color: #cd5c5c;')
+          span.fa.fa-home.fa-lg.pl-1.pr-1
+          |  Home
       li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/about')
-          b About
+        a.nav-link(href='https://industry-4nsv.herokuapp.com/about' style='color: #cd5c5c;')
+          span.fa.fa-info.fa-lg.pl-1.pr-1
+          |  About
       li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/event/getevent')
-          b News
-      li.nav-item.dropdown
-        a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-          b Details
-        .dropdown-menu
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/layouts') Layouts
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/LHBCoachShellManufacture') LHB Coach Shell Manufacture
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/tables') Tables
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/architecture')  Implementation and Architecture
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/moredetails') More
+        a.nav-link(href='https://industry-4nsv.herokuapp.com/contact' style='color: #cd5c5c;')
+          span.fa.fa-address-card.fa-lg.pl-1.pr-1
+          |  Contact
       li.nav-item
-        a.nav-link(href='https://industry-4nsv.herokuapp.com/contact')
-          b Contact
-      li.nav-item.dropdown
-        a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-          b Information
-        .dropdown-menu
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/getcomponentform#tb') Component Information
-          a.dropdown-item(href='#') Machine Information
-      li.nav-item.dropdown
-        a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-          b Admin 
-        .dropdown-menu
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/addevent') Add Event
-          a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/addcomponent') Add Component
+        a.nav-link(href='#' style='color:#cd5c5c')
+          span.fa.fa-user.fa-lg.pl-1.pr-1
+          | Admin
+header.bg-light
+  .carousel-inner(role='listbox' style='max-width:1600px; max-height:400px !important;')
+    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+        li(data-target='#carouselExampleIndicators' data-slide-to='1')
+        li(data-target='#carouselExampleIndicators' data-slide-to='2')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='/public/images/railway1.jpg' alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='/public/images/railway2.jpg' alt='Second slide')
+        .carousel-item
+          img.d-block.w-100(src='/public/images/railway3.jpg' alt='Third slide')
+      a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+  nav.navbar.navbar-expand-sm.navbar-light.bg-danger
+    a.navbar-brand(href='#')
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+      span.navbar-toggler-icon
+    #collapsibleNavbar.collapse.navbar-collapse
+      ul.navbar-nav
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b Get info
+          .dropdown-menu(style='background-color: #f7f7f7;')
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/getevent') Get event
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/getcomponentform#tb') Get component
+            a.dropdown-item(href='#') Get hardware design
+            a.dropdown-item(href='#') Get software design
+            a.dropdown-item(href='#') Get hardware MES
+            a.dropdown-item(href='#') Get software MES
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b Add info
+          .dropdown-menu(style='background-color: #f7f7f7;')
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/addevent') Add event
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/addcomponent') Add component
+            a.dropdown-item(href='#') Add hardware design
+            a.dropdown-item(href='#') Add software design
+            a.dropdown-item(href='#') Add hardware MES
+            a.dropdown-item(href='#') Add software MES
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b Production Unit 
+          .dropdown-menu(style='background-color:#f7f7f7;')
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/moredetails') Company Details
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/architecture') Ongoing Projects
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/tables') Project Report
+            a.dropdown-item(href='#') Project Budget Details
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b Establishment Section
+          .dropdown-menu(style='background-color: #f7f7f7;')
+            a.dropdown-item(href='#') Recruitment
+            a.dropdown-item(href='#') Job Definiton
+            a.dropdown-item(href='#') Pay/Perks
+            a.dropdown-item(href='#') Appoint Terms
+            a.dropdown-item(href='#') Exit Rules
+            a.dropdown-item(href='#') Job Rotaion
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b Production &amp; Maintainance
+          .dropdown-menu(style='background-color: #f7f7f7;')
+            a.dropdown-item(href='#') Raw Material Inventory
+            a.dropdown-item(href='#') Finished Goods Inventory
+            a.dropdown-item(href='#') Machine
+            a.dropdown-item(href='#') Space &amp; Stone Keeping
+            a.dropdown-item(href='#') Fault Recording
+            a.dropdown-item(href='#') Machine Maintainance
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/layouts') Project Progress Details
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b  Machine As Assets
+          .dropdown-menu(style='background-color: #f7f7f7;')
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/LHBCoachShellManufacture') Assembly Line
+            a.dropdown-item(href='#') Installed Machinery
+            a.dropdown-item(href='#') Automation Details
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b IT Outsourcing
+          .dropdown-menu(style='background-color: #f7f7f7;')
+            a.dropdown-item(href='#')  Project Allocation
+            a.dropdown-item(href='#') IT Project Development &amp; Monitoring
+            a.dropdown-item(href='#') IT Project Quality Checks &amp; Controls
+            a.dropdown-item(href='#') Recovery
+            a.dropdown-item(href='#') Project Personel Management
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b Finance &amp; Accounts
+          .dropdown-menu(style='background-color: #f7f7f7;')
+            a.dropdown-item(href='#') Budget &amp; Heads
+            a.dropdown-item(href='#') Utilization
+            a.dropdown-item(href='#') Purchase &amp; Procurement
+            a.dropdown-item(href='#') Expenditure
+            a.dropdown-item(href='#') Balance Sheets
+            a.dropdown-item(href='#') Record Generation
