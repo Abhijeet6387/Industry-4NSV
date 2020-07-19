@@ -6,7 +6,7 @@ include navbar.pug
     margin-left : auto;\
     margin-right: auto;\
     width: 25%')
-      form(action='/event/addevent' method='post' target='_blank')
+      form(action='/event/addevent' method='post' target='/event/getevent')
         .form-group
           label(for='Title') Title:
           input#Title.form-control(type='text' placeholder='Enter Title' name='Title')
