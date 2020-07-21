@@ -1,27 +1,26 @@
 
 include navbar.pug
 .bg-light
-  .container.pt-4.pb-4(style='background-color: #ffffff')
-  
-    div(style='background-color: #ffffff;')
-      #cont(style='display: block;\
-      margin-left : auto;\
-      margin-right: auto;\
-      width: 50%')
-      .container
-        .container(style='background-color: #ffffff')
-        
-          .container
-            div
-              h5(style='text-align: center;') Address
-              p(style='text-align: center;')
-                | NL 103 (Northen Lab)
-                | Department of M.E.
-                | Indian Institute of Technology, Kanpur
-                | 208016, Uttar Pradesh,
-                | India
-            div
-              h5(style='text-align: center;') Contact
-              p(style='text-align: center;') 0512-2597040
-    br
+.container
+  .row.row-content.pb-5
+    .col-12
+      h3.pt-5 Location Information
+    .col-12.col-sm-4.offset-sm-1
+      h5.pt-3.pb-2 Address
+      address
+        | NL 103 (Northen Lab)
+        br
+        |             Department of M.E.
+        br
+        |             Indian Institute of Technology, Kanpur
+        br
+        |             208016, Uttar Pradesh,
+        br
+        |             India
+        br
+        i.fa.fa-phone.fa-lg.pr-2
+        | :0512-2597040
+        br
+    .col-12.col-sm-6.offset-sm-1
+      h5 Map of our Location
 include footer.pug
