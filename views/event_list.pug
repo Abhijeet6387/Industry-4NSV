@@ -1,0 +1,11 @@
+
+include navbar.pug
+.bg-light
+  for item in event
+    .card.mt-5.ml-5.mr-5.mb-5.pt-2.pb-2
+      .card-body
+        h5.card-title #{ item.Title}
+        p.card-text #{item.Description}
+include footer.pug
+
+

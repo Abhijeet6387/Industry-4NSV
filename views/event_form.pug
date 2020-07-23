@@ -1,0 +1,26 @@
+
+include navbar.pug
+.bg-light
+  .card.container.mt-5.mb-5
+    .card-body(style='display: block;\
+    margin-left : auto;\
+    margin-right: auto;\
+    width: 25%')
+      form(action='/event/addevent' method='post' target='/event/getevent')
+        .form-group
+          label(for='Title') Title:
+          input#Title.form-control(type='text' placeholder='Enter Title' name='Title')
+        .form-group.pb-3
+          label(for='Description') Description:
+          input#Description.form-control(type='text' placeholder='Enter Description' name='Description')
+        button.block(type='submit' style=' display: block;\
+        width: 100%;\
+        border: none;\
+        background-color:#cd5c5c;\
+        padding: 14px 28px;\
+        font-size: 16px;\
+        cursor: pointer;\
+        text-align: center;')
+          b Submit
+include footer.pug
+

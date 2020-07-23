@@ -1,0 +1,35 @@
+
+include navbar.pug
+.bg-light
+  .container
+    .card.mt-5.mb-5
+      .card-body(style='display: block;\
+      margin-left : auto;\
+      margin-right: auto;\
+      width: 25%')
+        form(action='/component/addcomponent' method='post' target='_blank')
+          .form-group
+            label(for='Listname') Listname:
+            input#Listname.form-control(type='text' placeholder='Enter listname' name='Listname')
+          .form-group
+            label(for='Level') Level:
+            input#Level.form-control(type='text' placeholder='Enter level' name='Level')
+          .form-group
+            label(for='Item') Item:
+            input#Item.form-control(type='text' placeholder='Enter Item' name='Item')
+          .form-group
+            label(for='Description') Description:
+            input#Description.form-control(type='text' placeholder='Enter Description' name='Description')
+          .form-group.pb-3
+            label(for='Drawing_number') Drawing_number:
+            input#Drawing_number.form-control(type='text' placeholder='Enter Drawing_number' name='Drawing_number')
+          button.block(type='submit' style=' display: block;\
+          width: 100%;\
+          border: none;\
+          background-color:#cd5c5c;\
+          padding: 14px 28px;\
+          font-size: 16px;\
+          cursor: pointer;\
+          text-align: center;')
+            b Submit
+include footer.pug

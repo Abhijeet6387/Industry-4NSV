@@ -1,0 +1,49 @@
+
+include navbar.pug
+.bg-light
+  .bg-light
+    .card.pt-5.pb-5
+      .card-body(style='display: block;\
+      margin-left : auto;\
+      margin-right: auto;\
+      width: 25%')
+        form(action='/component/getcomponentdetails#tb' method='get' target='/component/getcomponentdetails#tb')
+          .form-group
+            label(for='Listname') Listname:
+            input#Listname.form-control(type='text' placeholder='Enter listname' name='Listname')
+          .form-group
+            label(for='Level') Level:
+            input#Level.form-control(type='text' placeholder='Enter level' name='Level')
+          .form-group.pb-3
+            label(for='Item') Item:
+            input#Item.form-control(type='text' placeholder='Enter Item' name='Item')
+          button.block(type='submit' style=' display: block;\
+          width: 100%;\
+          border: none;\
+          background-color:#cd5c5c;\
+          padding: 14px 28px;\
+          font-size: 16px;\
+          cursor: pointer;\
+          text-align: center;')
+            b Submit
+    
+    .row
+      #tb.container
+        table.table
+          thead(style='background-color: #cd5c5c; color: #f0f0f5;')
+            tr
+              th(scope='col') Listname
+              th(scope='col') Level
+              th(scope='col') Item
+              th(scope='col') Drawing_number
+              th(scope='col') Description
+          tbody
+            if component
+              for item in component
+                tr
+                  th(scope='row') #{item.Listname}
+                  td #{item.Level}
+                  td #{item.Item}
+                  td #{item.Drawing_number}
+                  td #{item.Description}
+include footer.pug
