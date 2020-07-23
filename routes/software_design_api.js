@@ -8,29 +8,30 @@ var path = require("path")
 
 //Restful routes
 //index route
-router.get("/softwaredesign",function(req,res){
+router.get("/get",function(req,res){
     softwareDesign.find({},function(err,softwaredesign){
         if(err)
         {
             console.log("error");
         }
         else{
-            res.send("softwaredesign",{softwaredesign:softwaredesign})
+            res.render("softwareDesignList",{softwaredesign:softwaredesign})
         }
     })
 })
 //new route
-router.get("/softwaredesign/new",function(req,res){
-    res.send("new");
+router.get("/add",function(req,res){
+    res.render("addSoftwareDetails");
 })
-router.post("/softwaredesign",function(req,res){
+router.post("/add",function(req,res){
 
    softwareDesign.create(req.body,function(err,newlyCreatedsoftwareDesign){
         if (err){
             console.log(err);
         }
         else{
-            res.redirect("/softwaredesign");
+            // res.redirect("/softwaredesign");
+            res.send(newlyCreatedsoftwareDesign);
         } 
     })
 })

@@ -8,22 +8,23 @@ var path = require("path")
 
 //Restful routes
 //index route
-router.get("/hardwaredesign",function(req,res){
+router.get("/get",function(req,res){
     hardwareDesign.find({},function(err,hardwaredesign){
         if(err)
         {
             console.log("error");
         }
         else{
-            res.send("hardwaredesign",{hardwaredesign:hardwaredesign})
+            console.log(hardwaredesign);
+            res.render("hardwareDesignList",{hardwaredesign:hardwaredesign})
         }
     })
 })
 //new route
-router.get("/hardwaredesign/new",function(req,res){
-    res.send("new");
+router.get("/add",function(req,res){
+    res.render("addHardwareDetails");
 })
-router.post("/hardwaredesign",function(req,res){
+router.post("/add",function(req,res){
    console.log(req.body);
    hardwareDesign.create(req.body,function(err,newlyCreatedhardwareDesign){
         if (err){

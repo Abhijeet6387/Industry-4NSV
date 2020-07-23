@@ -8,29 +8,30 @@ var path = require("path")
 
 //Restful routes
 //index route
-router.get("/softwaremes",function(req,res){
-    softwareMes.find({},function(err,softwaremes){
+router.get("/get",function(req,res){
+    softwareMes.find({},function(err,softwareMes){
         if(err)
         {
             console.log("error");
         }
         else{
-            res.send("softwaremes",{softwaremes:softwaremes})
+            res.render("softwareMESlist",{softwareMes:softwareMes})
         }
     })
 })
 //new route
-router.get("/softwaremes/new",function(req,res){
-    res.send("new");
+router.get("/add",function(req,res){
+    res.render("addSoftwareMes");
 })
-router.post("/softwaremes",function(req,res){
+router.post("/add",function(req,res){
 
    softwareMes.create(req.body,function(err,newlyCreatedsoftwareMes){
         if (err){
             console.log(err);
         }
         else{
-            res.redirect("/softwaremes");
+            // res.redirect("/softwaremes");
+            res.send(newlyCreatedsoftwareMes);
         } 
     })
 })

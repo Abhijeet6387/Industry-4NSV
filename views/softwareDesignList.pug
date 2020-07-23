@@ -1,0 +1,23 @@
+include navbar.pug
+.bg-light.pt-5
+  .bg-light
+    .row
+      #tb.container
+        table.table
+          thead(style='background-color: #cd5c5c; color: #f0f0f5;')
+            tr
+              th(scope='col') Manufacturer
+              th(scope='col') Softwares
+              th(scope='col') Quantity
+              th(scope='col') price
+              th(scope='col') Status            
+          tbody
+            if softwaredesign
+              for item in softwaredesign
+                tr
+                  td #{item.Manufacturer}
+                  td #{item.Softwares}
+                  td #{item.Quantity}
+                  td #{item.price}
+                  td #{item.Status}           
+include footer.pug

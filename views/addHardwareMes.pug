@@ -1,0 +1,45 @@
+include navbar.pug
+.bg-light
+  .card.container.mt-5.mb-5
+    .card-body(style='display: block;\
+    margin-left : auto;\
+    margin-right: auto;\
+    width: 25%')
+      form(action='/hardwareMES/add' method='post' target='_blank')
+        .form-group
+          label(for='Specification') Specification:
+          input#Specification.form-control(type='text' placeholder='Enter Specification' name='Specification')
+        .form-group
+          label(for='RequiredAt') RequiredAt:
+          input#RequiredAt.form-control(type='text' placeholder='Enter RequiredAt' name='RequiredAt')
+        .form-group
+          label(for='PricePerUnit') PricePerUnit:
+          input#PricePerUnit.form-control(type='text' placeholder='Enter PricePerUnit' name='PricePerUnit')
+        .form-group
+          label(for='NoOfUnits') NoOfUnits:
+          input#NoOfUnits.form-control(type='text' placeholder='Enter NoOfUnits' name='NoOfUnits')
+        .form-group
+          label(for='Total') Total:
+          input#Total.form-control(type='text' placeholder='Enter Total' name='Total')
+        .form-group
+          label(for='PurchasedQuantity') PurchasedQuantity:
+          input#PurchasedQuantity.form-control(type='text' placeholder='Enter PurchasedQuantity' name='PurchasedQuantity')
+        .form-group
+          label(for='PriceInLakhs') PriceInLakhs:
+          input#PriceInLakhs.form-control(type='text' placeholder='Enter PriceInLakhs' name='PriceInLakhs')
+        .form-group
+          label(for='BoughtFor') BoughtFor:
+          input#BoughtFor.form-control(type='text' placeholder='Enter BoughtFor' name='BoughtFor')
+        .form-group
+          label(for='Status')  Status:
+          input#Status.form-control(type='text' placeholder='Enter Status' name='Status')
+        button.block(type='submit' style=' display: block;\
+        width: 100%;\
+        border: none;\
+        background-color:#cd5c5c;\
+        padding: 14px 28px;\
+        font-size: 16px;\
+        cursor: pointer;\
+        text-align: center;')
+          b Submit
+include footer.pug
