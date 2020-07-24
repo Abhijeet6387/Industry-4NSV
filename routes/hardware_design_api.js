@@ -31,8 +31,8 @@ router.post("/add",function(req,res){
             console.log(err);
         }
         else{
-            // res.redirect("/hardwaredesign");
-            res.send(newlyCreatedhardwareDesign);
+            res.redirect("/hardwareDesign/get");
+            // res.send(newlyCreatedhardwareDesign);
         } 
     })
 })

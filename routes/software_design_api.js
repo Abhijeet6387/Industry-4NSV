@@ -30,8 +30,8 @@ router.post("/add",function(req,res){
             console.log(err);
         }
         else{
-            // res.redirect("/softwaredesign");
-            res.send(newlyCreatedsoftwareDesign);
+            res.redirect("/softwareDesign/get");
+            // res.send(newlyCreatedsoftwareDesign);
         } 
     })
 })

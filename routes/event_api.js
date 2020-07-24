@@ -41,7 +41,10 @@ router.post('/addevent',(req,res) =>{
     });
     event.save().then(
         (event)=>{console.log('the event is' +event)
-        res.json(event)}
+        // res.json(event)
+        res.redirect("/event/getevent");
+        
+    }
     ).catch(err=>console.log('the error is' +err));
 
 

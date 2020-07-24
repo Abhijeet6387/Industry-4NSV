@@ -30,7 +30,8 @@ router.post("/add",function(req,res){
             console.log(err);
         }
         else{
-            res.send(newlyCreatedhardwareMes)
+            // res.send(newlyCreatedhardwareMes)
+            res.redirect("/hardwareMES/get");
         } 
     })
 })

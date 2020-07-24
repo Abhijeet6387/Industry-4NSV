@@ -48,7 +48,10 @@ router.post('/addcomponent',(req,res) =>{
     });
     component.save().then(
         (component)=>{console.log('the component is' +component)
-        res.json(component)}
+        // res.json(component);
+        res.redirect("/component/getcomponentdetails");
+    
+    }
     ).catch(err=>console.log('the error is' +err));
 
 

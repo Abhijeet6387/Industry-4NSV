@@ -30,8 +30,8 @@ router.post("/add",function(req,res){
             console.log(err);
         }
         else{
-            // res.redirect("/softwaremes");
-            res.send(newlyCreatedsoftwareMes);
+            res.redirect("/softwareMES/get");
+            // res.send(newlyCreatedsoftwareMes);
         } 
     })
 })
