@@ -87,28 +87,8 @@ header.bg-light
       ul.navbar-nav
         li.nav-item.dropdown
           a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Get info
-          .dropdown-menu(style='background-color: #f7f7f7;')
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/getevent') Get event
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/getcomponentform#tb') Get component
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/get') Get hardware design
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/get') Get software design
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/get') Get hardware MES
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/get') Get software MES
-        li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Add info
-          .dropdown-menu(style='background-color: #f7f7f7;')
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/addevent') Add event
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/addcomponent') Add component
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/add') Add hardware design
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/add') Add software design
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/add') Add hardware MES
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/add') Add software MES
-        li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Production Unit
-          .dropdown-menu(style='background-color:#f7f7f7;')
+            b(style='color:#f7f7f7;') Production
+          .dropdown-menu.bg-light
             a.dropdown-item(href='https://industry-4nsv.herokuapp.com/moredetails') Company Details
             a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/architecture') Ongoing Projects
             a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/tables') Project Report
@@ -116,7 +96,7 @@ header.bg-light
         li.nav-item.dropdown
           a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
             b(style='color:#f7f7f7;') Establishment Section
-          .dropdown-menu(style='background-color: #f7f7f7;')
+          .dropdown-menu.bg-light
             a.dropdown-item(href='#') Recruitment
             a.dropdown-item(href='#') Job Definiton
             a.dropdown-item(href='#') Pay/Perks
@@ -126,7 +106,7 @@ header.bg-light
         li.nav-item.dropdown
           a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
             b(style='color:#f7f7f7;') Production &amp; Maintainance
-          .dropdown-menu(style='background-color: #f7f7f7;')
+          .dropdown-menu.bg-light
             a.dropdown-item(href='#') Raw Material Inventory
             a.dropdown-item(href='#') Finished Goods Inventory
             a.dropdown-item(href='#') Machine
@@ -137,14 +117,14 @@ header.bg-light
         li.nav-item.dropdown
           a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
             b(style='color:#f7f7f7;')  Machine As Assets
-          .dropdown-menu(style='background-color: #f7f7f7;')
+          .dropdown-menu.bg-light
             a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/LHBCoachShellManufacture') Assembly Line
             a.dropdown-item(href='#') Installed Machinery
             a.dropdown-item(href='#') Automation Details
         li.nav-item.dropdown
           a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
             b(style='color:#f7f7f7;') IT Outsourcing
-          .dropdown-menu(style='background-color: #f7f7f7;')
+          .dropdown-menu.bg-light
             a.dropdown-item(href='#')  Project Allocation
             a.dropdown-item(href='#') IT Project Development &amp; Monitoring
             a.dropdown-item(href='#') IT Project Quality Checks &amp; Controls
@@ -153,10 +133,30 @@ header.bg-light
         li.nav-item.dropdown
           a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
             b(style='color:#f7f7f7;') Finance &amp; Accounts
-          .dropdown-menu(style='background-color: #f7f7f7;')
+          .dropdown-menu.bg-light
             a.dropdown-item(href='#') Budget &amp; Heads
             a.dropdown-item(href='#') Utilization
             a.dropdown-item(href='#') Purchase &amp; Procurement
             a.dropdown-item(href='#') Expenditure
             a.dropdown-item(href='#') Balance Sheets
             a.dropdown-item(href='#') Record Generation
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b(style='color:#f7f7f7;') Get info
+          .dropdown-menu.bg-light
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/getevent') Get event
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/getcomponentform#tb') Get component
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/get') Get hardware design
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/get') Get software design
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/get') Get hardware MES
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/get') Get software MES
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
+            b(style='color:#f7f7f7;') Add info
+          .dropdown-menu.bg-light
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/addevent') Add event
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/addcomponent') Add component
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/add') Add hardware design
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/add') Add software design
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/add') Add hardware MES
+            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/add') Add software MES
