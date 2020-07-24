@@ -9,7 +9,7 @@ include navbar.pug
               th(scope='col') Softwares
               th(scope='col') Quantity
               th(scope='col') Price
-              th(scope='col') Status            
+              th(scope='col') Order            
           tbody
             if softwareMes
               for item in softwareMes
@@ -17,5 +17,5 @@ include navbar.pug
                   td #{item.Softwares}
                   td #{item.Quantity}
                   td #{item.Price}
-                  td #{item.Status}           
+                  td #{item.Order}           
 include footer.pug
