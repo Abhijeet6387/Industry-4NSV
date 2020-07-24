@@ -16,8 +16,8 @@ include navbar.pug
               th(scope='col') BoughtFor     
               th(scope='col') Status            
           tbody
-            if hardwareMESlist
-              for item in hardwareMESlist
+            if hardwaremes
+              for item in hardwaremes
                 tr
                   th(scope='row') #{item.Specification}
                   td #{item.RequiredAt}

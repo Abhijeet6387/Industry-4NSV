@@ -10,9 +10,14 @@ const hardware_design_api=require("./routes/hardware_design_api");
 const hardware_MES_api = require("./routes/hardware_MES_api");
 const software_design_api=require("./routes/software_design_api");
 const software_MES_api = require("./routes/software_MES_api");
+const Admin_router=require('./routes/admin_api');
 
 const path=require("path");
 
+app.use("/admin",Admin_router)
+app.use(bodyParser.urlencoded({
+    extended: false
+ }));
 
 
 

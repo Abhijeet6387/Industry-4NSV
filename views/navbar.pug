@@ -55,31 +55,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           span.fa.fa-address-card.fa-lg.pl-1.pr-1
           |  Contact
       li.nav-item
-        a.nav-link(href='#' data-toggle='modal' data-target='#loginModal' style='color:#cd5c5c')
-          span.fa.fa-user.fa-lg.pl-1.pr-1
-          | Admin
-#loginModal.modal.fade(role='dialog')
-  .modal-dialog.modal-lg(role='content')
-    .modal-content
-      .modal-header
-        h4.modal-title Login
-        button.close(type='button' data-dismiss='modal') &times;
-      .modal-body
-        form
-          .form-row
-            .form-group.col-sm-4
-              label.sr-only(for='exampleInputEmail3') Email address
-              input#exampleInputEmail3.form-control.form-control-sm.form-control-sm.mr-1(type='email' placeholder='Enter email')
-            .form-group.col-sm-4
-              label.sr-only(for='exampleInputPassword3') Password
-              input#exampleInputPassword3.form-control.form-control-sm.mr-1(type='password' placeholder='Password')
-            .col-sm-auto
-              .form-check
-                input.form-check-input(type='checkbox')
-                label.form-check-label Remember me
-          .form-row
-            button.btn.btn-secondary.btn-sm.ml-auto(type='button' data-dismiss='modal') Cancel
-            button.btn.btn-danger.btn-sm.ml-1(type='submit') Sign in
+        a.nav-link(href='https://industry-4nsv.herokuapp.com/admin' style='color: #cd5c5c;')
+          span.fa.fa-address-card.fa-lg.pl-1.pr-1
+          |  Admin
 
 header.bg-light
   .carousel-inner(role='listbox' style='max-width:1600px; max-height:400px !important;')
