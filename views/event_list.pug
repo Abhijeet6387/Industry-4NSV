@@ -1,11 +1,11 @@
-
 include navbar.pug
 .bg-light
   for item in event
-    .card.pt-5.ml-5.mr-5.mb-5.pb-5
-      .card-body
-        h5.card-title #{ item.Title}
-        p.card-text #{item.Description}
+    .container.pt-3.pb-3
+      .card
+        .card-body
+          h5.card-title #{ item.Title}
+          p.card-text #{item.Description}
 include footer.pug
 
 
