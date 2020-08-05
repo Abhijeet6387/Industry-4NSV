@@ -9,8 +9,8 @@ head
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
   script(src='https://kit.fontawesome.com/a076d05399.js')
   style.
-    a.dropdown-item:hover{
-    background-color:#f5dede;
+    a.dropdown-item:hover {
+    background-color: #f5dede;
     color: #cd5c5c;
     }
     .footer {
@@ -23,16 +23,65 @@ head
     display: block;
     position: absolute;
     z-index: 1000;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
     }
-   .next {
+    .next {
     display: block;
     position: absolute;
     right: 0px;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 1000;
+    }
+  script(type='text/javascript').
+    /// some script
+    // jquery ready start
+    $(document).ready(function() {
+    // jQuery code
+    //////////////////////// Prevent closing from click inside dropdown
+    $(document).on('click', '.dropdown-menu', function (e) {
+    e.stopPropagation();
+    });
+    // make it as accordion for smaller screens
+    if ($(window).width() < 992) {
+    $('.dropdown-menu a').click(function(e){
+    e.preventDefault();
+    if($(this).next('.submenu').length){
+    $(this).next('.submenu').toggle();
+    }
+    $('.dropdown').on('hide.bs.dropdown', function () {
+    $(this).find('.submenu').hide();
+    })
+    });
+    }
+    }); // jquery end
+  style(type='text/css').
+    @media (min-width: 992px){
+    .dropdown-menu .dropdown-toggle:after{
+    border-top: .3em solid transparent;
+    border-right: 0;
+    border-bottom: .3em solid transparent;
+    border-left: .3em solid;
+    }
+    .dropdown-menu .dropdown-menu{
+    margin-left:0; margin-right: 0;
+    }
+    .dropdown-menu li{
+    position: relative;
+    }
+    .nav-item .submenu{
+    display: none;
+    position: absolute;
+    left:100%; top:-7px;
+    }
+    .nav-item .submenu-left{
+    right:100%; left:auto;
+    }
+    .dropdown-menu > li:hover{ background-color: #ffffff; }
+    .dropdown-menu > li:hover > .submenu{
+    display: block;
+    }
     }
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
   a.navbar-brand.mr-auto(href='#' style='color: #cd5c5c; font-size: 30px;')
@@ -58,7 +107,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a.nav-link(href='https://industry-4nsv.herokuapp.com/admin' style='color: #cd5c5c;')
           span.fa.fa-user.fa-lg.pl-1.pr-1
           |  Admin
-
 header.bg-light
   .carousel-inner(role='listbox' style='max-width:1600px; max-height:400px !important;')
     #carouselExampleIndicators.carousel.slide(data-ride='carousel')
@@ -79,107 +127,143 @@ header.bg-light
       a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
         span.carousel-control-next-icon(aria-hidden='true')
         span.sr-only Next
-  nav.navbar.navbar-expand-sm.navbar-light(style='background-color:#cd5c5c;')
-    a.navbar-brand(href='#')
-    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+  nav.navbar.navbar-expand-lg.navbar-dark(style='background-color: #cd5c5c;')
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#main_nav')
       span.navbar-toggler-icon
-    #collapsibleNavbar.collapse.navbar-collapse
+    #main_nav.collapse.navbar-collapse
       ul.navbar-nav
         li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Production
-          .dropdown-menu.bg-light
-            //- a.dropdown-item(href='https://industry-4nsv.herokuapp.com/moredetails') Company Details
-            //- a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/architecture') Ongoing Projects
-            //- a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/tables') Project Report
-            //- a.dropdown-item(href='#') Project Budget Details
-            a.dropdown-item(href='#') Description
-            a.dropdown-item(href='#') Dashboard
-
+          a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' style='color: #f5dede;')
+            b Production
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#')  Dashboard 
+              a.dropdown-item(href='#')  Description 
         li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Establishment 
-          .dropdown-menu.bg-light
-            //- a.dropdown-item(href='#') Recruitment
-            //- a.dropdown-item(href='#') Job Definiton
-            //- a.dropdown-item(href='#') Pay/Perks
-            //- a.dropdown-item(href='#') Appoint Terms
-            //- a.dropdown-item(href='#') Exit Rules
-            //- a.dropdown-item(href='#') Job Rotaion
-            a.dropdown-item(href='#') Machines
-            a.dropdown-item(href='#') Coach Sub-Systems & Components
-            a.dropdown-item(href='#') PERT Chart
-            a.dropdown-item(href='#') IT Hardware
-        //- li.nav-item.dropdown
-        //-   a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-        //-     b(style='color:#f7f7f7;') Production &amp; Maintainance
-        //-   .dropdown-menu.bg-light
-        //-     a.dropdown-item(href='#') Raw Material Inventory
-        //-     a.dropdown-item(href='#') Finished Goods Inventory
-        //-     a.dropdown-item(href='#') Machine
-        //-     a.dropdown-item(href='#') Space &amp; Stone Keeping
-        //-     a.dropdown-item(href='#') Fault Recording
-        //-     a.dropdown-item(href='#') Machine Maintainance
-        //-     a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/layouts') Project Progress Details
-        //- li.nav-item.dropdown
-        //-   a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-        //-     b(style='color:#f7f7f7;')  Machine As Assets
-        //-   .dropdown-menu.bg-light
-        //-     a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/LHBCoachShellManufacture') Assembly Line
-        //-     a.dropdown-item(href='#') Installed Machinery
-        //-     a.dropdown-item(href='#') Automation Details
-        //- li.nav-item.dropdown
-        //-   a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-        //-     b(style='color:#f7f7f7;') IT Outsourcing
-        //-   .dropdown-menu.bg-light
-        //-     a.dropdown-item(href='#')  Project Allocation
-        //-     a.dropdown-item(href='#') IT Project Development &amp; Monitoring
-        //-     a.dropdown-item(href='#') IT Project Quality Checks &amp; Controls
-        //-     a.dropdown-item(href='#') Recovery
-        //-     a.dropdown-item(href='#') Project Personel Management
+          a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' style='color: #f5dede;')
+            b Establishment
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#')  Machines  
+              ul.submenu.dropdown-menu
+                li
+                  a.dropdown-item(href='') Add Info
+                  ul.submenu.dropdown-menu
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/add') Add hardware design
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/add') Add software design
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/add') Add hardware MES
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/add') Add software MES
+                li
+                  a.dropdown-item(href='') Get Info
+                  ul.submenu.dropdown-menu
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/get') Get hardware design
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/get') Get software design
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/get') Get hardware MES
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/get') Get software MES
+            li
+              a.dropdown-item(href='#') Coach Sub-Systems &amp; Components 
+              ul.submenu.dropdown-menu
+                li
+                  a.dropdown-item(href='') Add Info  
+                  ul.submenu.dropdown-menu
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/addevent') Add Event
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/addcomponent') Add Component
+                li
+                  a.dropdown-item(href='') Get Info  
+                  ul.submenu.dropdown-menu
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/getevent') Get Event
+                    li
+                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/getcomponentform#tb') Get Component
+            li
+              a.dropdown-item(href='#') PERT Chart
+            li
+              a.dropdown-item(href='#')  IT Hardware  
+              ul.submenu.dropdown-menu
+                li
+                  a.dropdown-item(href='') OPC-UA Server-Client 
+                  ul.submenu.dropdown-menu
+                    li
+                      a.dropdown-item(href='#') Siemens
+                    li
+                      a.dropdown-item(href='#') In-house development
+                li
+                  a.dropdown-item(href='#') Fanuc links 
+                li
+                  a.dropdown-item(href='#') RFID 
+                li
+                  a.dropdown-item(href='#') Instrumentation 
         li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Status & Updates
-          .dropdown-menu.bg-light
-            a.dropdown-item(href='#') Overall Progress
-            a.dropdown-item(href='#') Update
-            a.dropdown-item(href='#') Discussion Board
-            a.dropdown-item(href='#') Minutes of Meetings
+          a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' style='color: #f5dede;')
+            b Status &amp; Updates
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#') Overall Progress
+              a.dropdown-item(href='#') Update
+              a.dropdown-item(href='#') Discussion Board
+              a.dropdown-item(href='#') Minutes of Meetings
         li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#RuTAG link' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Other Projects
-          .dropdown-menu.bg-light
-            a.dropdown-item(href='#') Overall Progress
-            a.dropdown-item(href='#') Update
-            a.dropdown-item(href='#') Discussion Board
-            a.dropdown-item(href='#') Minutes of Meetings
+          a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' style='color: #f5dede;')
+            b Other Projects
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#') Overall Progress
+              a.dropdown-item(href='#') Update
+              a.dropdown-item(href='#') Discussion Board
+              a.dropdown-item(href='#') Minutes of Meetings
         li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Finance &amp; Accounts
-          .dropdown-menu.bg-light
-            a.dropdown-item(href='#') Budget &amp; Heads
-            a.dropdown-item(href='#') Utilization
-            a.dropdown-item(href='#') Purchase &amp; Procurement
-            a.dropdown-item(href='#') Expenditure
-            a.dropdown-item(href='#') Balance Sheets
-            a.dropdown-item(href='#') Record Generation
-        li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Get info
-          .dropdown-menu.bg-light
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/getevent') Get event
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/getcomponentform#tb') Get component
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/get') Get hardware design
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/get') Get software design
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/get') Get hardware MES
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/get') Get software MES
-        li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle(href='#' data-toggle='dropdown')
-            b(style='color:#f7f7f7;') Add info
-          .dropdown-menu.bg-light
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/event/addevent') Add event
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/component/addcomponent') Add component
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/add') Add hardware design
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/add') Add software design
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/add') Add hardware MES
-            a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/add') Add software MES
+          a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' style='color: #f5dede;')
+            b Finance &amp; Accounts
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#') Budget &amp; Heads
+              a.dropdown-item(href='#') Utilization
+              a.dropdown-item(href='#') Purchase &amp; Procurement
+              a.dropdown-item(href='#') Expenditure
+              a.dropdown-item(href='#') Balance Sheets
+              a.dropdown-item(href='#') Record Generation
+        //
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  More items  </a>
+          <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li>
+          <li>
+          <a class="dropdown-item dropdown-toggle" href="#"> Dropdown item 2 </a>
+          <ul class="submenu dropdown-menu">
+          <li><a class="dropdown-item" href="">Submenu item 1</a></li>
+          <li><a class="dropdown-item" href="">Submenu item 2</a></li>
+          <li><a class="dropdown-item" href="">Submenu item 3</a></li>
+          </ul>
+          </li>
+          <li>
+          <a class="dropdown-item dropdown-toggle" href="#"> Dropdown item 3 </a>
+          <ul class="submenu dropdown-menu">
+          <li><a class="dropdown-item" href="">Another submenu 1</a></li>
+          <li><a class="dropdown-item" href="">Another submenu 2</a></li>
+          <li><a class="dropdown-item" href="">Another submenu 3</a></li>
+          <li><a class="dropdown-item" href="">Another submenu 4</a></li>
+          </ul>
+          </li>
+          <li>
+          <a class="dropdown-item dropdown-toggle" href="#"> Dropdown item 4 </a>
+          <ul class="submenu dropdown-menu">
+          <li><a class="dropdown-item" href="">Another submenu 1</a></li>
+          <li><a class="dropdown-item" href="">Another submenu 2</a></li>
+          <li><a class="dropdown-item" href="">Another submenu 3</a></li>
+          <li><a class="dropdown-item" href="">Another submenu 4</a></li>
+          </ul>
+          </li>
+          <li><a class="dropdown-item" href="#"> Dropdown item 4 </a></li>
+          <li><a class="dropdown-item" href="#"> Dropdown item 5 </a></li>
+          </ul>
+          </li>
