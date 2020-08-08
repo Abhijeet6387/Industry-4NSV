@@ -1,8 +1,69 @@
+//- footer.footer
+//-   .container
+//-     .row
+//-       .col-4.col-sm-2.offset-1
+//-         h5 
+//-           b Links
+//-         ul.list-unstyled
+//-           li
+//-             a(href='#' style='color: black;')
+//-               span.fa.fa-home.fa-lg.pt-2.pr-1
+//-               | Home
+//-           li
+//-             a(href='#' style='color: black;')
+//-               span.fa.fa-info.fa-lg.pt-3.pr-3
+//-               | About
+//-           li
+//-             a(href='#' style='color: black;')
+//-               span.fa.fa-address-card.fa-lg.pt-3.pr-1
+//-               | Contact
+//-           li
+//-             a(href='#' style='color: black;')
+//-               span.fa.fa-user.fa-lg.pt-3.pr-2
+//-               | Admin
+//-       .col-7.col-sm-5
+//-         h5 
+//-           b Address
+//-         address
+//-           | NL 103 (Northen Lab)
+//-           br
+//-           |                   Department of M.E.
+//-           br
+//-           |                   Indian Institute of Technology, Kanpur
+//-           br
+//-           |                   208016, Uttar Pradesh,
+//-           br
+//-           |                   India
+//-           br
+//-           i.fa.fa-phone.fa-lg.pr-2
+//-           | :0512-2597040
+//-           br
+//-       .col-12.col-sm-4.align-self-center
+//-         p 
+//-           b &copy; Copyright 2020 , All Rights Reserved
 footer.footer
-  .container
+  .container.text-center.text-md-left
     .row
-      .col-4.col-sm-2.offset-1
-        h5 
+      .col-md-6.mt-md-0.mt-3
+        h5.text-uppercase 
+          b Address
+        address
+          | NL 103 (Northen Lab)
+          br
+          |                 Department of M.E.
+          br
+          |                 Indian Institute of Technology, Kanpur
+          br
+          |                 208016, Uttar Pradesh,
+          br
+          |                 India
+          br
+          i.fa.fa-phone.fa-lg.pr-2
+          | :0512-2597040
+          br
+      hr.clearfix.w-100.d-md-none.pb-3
+      .col-md-3.mb-md-0.mb-3
+        h5.text-uppercase 
           b Links
         ul.list-unstyled
           li
@@ -21,23 +82,17 @@ footer.footer
             a(href='#' style='color: black;')
               span.fa.fa-user.fa-lg.pt-3.pr-2
               | Admin
-      .col-7.col-sm-5
-        h5 
-          b Address
-        address
-          | NL 103 (Northen Lab)
-          br
-          |                   Department of M.E.
-          br
-          |                   Indian Institute of Technology, Kanpur
-          br
-          |                   208016, Uttar Pradesh,
-          br
-          |                   India
-          br
-          i.fa.fa-phone.fa-lg.pr-2
-          | :0512-2597040
-          br
-      .col-12.col-sm-4.align-self-center
-        p 
-          b &copy; Copyright 2020 , All Rights Reserved
+      .col-md-3.mb-md-0.mb-3
+        h5.text-uppercase 
+          b Useful Links
+        ul.list-unstyled
+          li.pt-1
+            a(href='#' style='color: black;') Relevant Literature
+          li.pt-1
+            a(href='https://mcf.indianrailways.gov.in/' style='color: black;') About MCF
+          li.pt-1
+            a(href='http://www.indianrailways.gov.in/railwayboard/' style='color: black;') About Indian Railways
+          li.pt-1
+            a(href='http://www.iitk.ac.in/' style='color: black;') About IIT Kanpur
+.footer-copyright.text-center.py-3(style='background-color:#A93434')
+  b &copy; 2020 Copyright: All Rights Reserved
