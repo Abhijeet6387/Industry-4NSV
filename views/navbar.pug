@@ -134,13 +134,14 @@ header.bg-light
       span.navbar-toggler-icon
     #main_nav.collapse.navbar-collapse
       ul.navbar-nav.mx-auto
-        li.nav-item.active
-          a.nav-link(href='https://industry-4nsv.herokuapp.com/')
+        //- li.nav-item.active
+        //-   a.nav-link(href='https://industry-4nsv.herokuapp.com/')
+        //-     span.fa.fa-home.fa-lg.pl-2.pr-2
+        //-     b Home
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='https://industry-4nsv.herokuapp.com/' data-toggle='dropdown' style='color: #f5dede;')
             span.fa.fa-home.fa-lg.pl-2.pr-2
             b Home
-        li.nav-item.dropdown
-          a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' style='color: #f5dede;')
-            b Production
           ul.dropdown-menu
             li
               a.dropdown-item(href='https://industry-4nsv.herokuapp.com/moredetails')  Dashboard 
