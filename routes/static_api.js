@@ -27,5 +27,12 @@ router.get('/moredetails',(req,res)=>{
 router.get('/contact',(req,res)=>{
     res.render('contact')
 })
+router.get('/description',(req,res)=>{
+    res.render('description')
+})
+router.get('/dashboard',(req,res)=>{
+    res.render('dashboard')
+})
+
 
 module.exports=router;
