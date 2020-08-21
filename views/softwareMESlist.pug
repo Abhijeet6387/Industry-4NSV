@@ -14,7 +14,9 @@ include navbar.pug
               th(scope='col') Softwares
               th(scope='col') Quantity
               th(scope='col') Price
-              th(scope='col') Order            
+              th(scope='col') Order
+              th(scope='col') Edit
+              th(scope='col') Delete             
           tbody
             if softwareMes
               for item in softwareMes
@@ -22,5 +24,9 @@ include navbar.pug
                   td #{item.Softwares}
                   td #{item.Quantity}
                   td #{item.Price}
-                  td #{item.Order}           
+                  td #{item.Order}
+                  td 
+                    i.fa.fa-edit
+                  td
+                    i.fa.fa-trash            
 include footer.pug
