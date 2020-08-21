@@ -140,7 +140,7 @@ header.bg-light
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#main_nav')
       span.navbar-toggler-icon
     #main_nav.collapse.navbar-collapse
-      ul.navbar-nav.mx-auto
+      ul.navbar-nav
         //- li.nav-item.active
         //-   a.nav-link(href='https://industry-4nsv.herokuapp.com/')
         //-     span.fa.fa-home.fa-lg.pl-2.pr-2
@@ -160,28 +160,28 @@ header.bg-light
             li
               a.dropdown-item(href='#' target='_blank')  Machines  
               ul.submenu.dropdown-menu
-                li
-                  a.dropdown-item(href='#' target='_blank') Add Info
-                  ul.submenu.dropdown-menu
-                    li
-                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/add' target='_blank') Add hardware design
-                    li
-                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/add' target='_blank') Add software design
-                    li
-                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/add' target='_blank') Add hardware MES
-                    li
-                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/add' target='_blank') Add software MES
-                li
-                  a.dropdown-item(href='#' target='_blank') Get Info
-                  ul.submenu.dropdown-menu
-                    li
-                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/get' target='_blank') Get hardware design
-                    li
-                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/get' target='_blank') Get software design
-                    li
-                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/get' target='_blank') Get hardware MES
-                    li
-                      a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/get' target='_blank') Get software MES
+                //- li
+                //-   a.dropdown-item(href='#' target='_blank') Add Info
+                //-   ul.submenu.dropdown-menu
+                //-     li
+                //-       a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/add' target='_blank') Add hardware design
+                //-     li
+                //-       a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/add' target='_blank') Add software design
+                //-     li
+                //-       a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/add' target='_blank') Add hardware MES
+                //-     li
+                //-       a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/add' target='_blank') Add software MES
+                //- li
+                //-   a.dropdown-item(href='#' target='_blank') Get Info
+                //-   ul.submenu.dropdown-menu
+                //-     li
+                //-       a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/get' target='_blank') Get hardware design
+                //-     li
+                //-       a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/get' target='_blank') Get software design
+                //-     li
+                //-       a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/get' target='_blank') Get hardware MES
+                //-     li
+                //-       a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/get' target='_blank') Get software MES
                 li
                   a.dropdown-item(href='https://industry-4nsv.herokuapp.com/implementation/LHBCoachShellManufacture' target='_blank') Coach Sub-Systems &amp; Components 
                   ul.submenu.dropdown-menu
@@ -243,12 +243,34 @@ header.bg-light
             b Finance &amp; Accounts
           ul.dropdown-menu
             li
-              a.dropdown-item(href='#' target='_blank') Budget &amp; Heads
-              a.dropdown-item(href='#' target='_blank') Utilization
-              a.dropdown-item(href='#' target='_blank') Purchase &amp; Procurement
-              a.dropdown-item(href='#' target='_blank') Expenditure
-              a.dropdown-item(href='#' target='_blank') Balance Sheets
-              a.dropdown-item(href='#' target='_blank') Record Generation
+              a.dropdown-item(href='#') Add Info
+              ul.submenu.dropdown-menu
+                li
+                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/add' target='_blank') Add hardware design
+                li
+                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/add' target='_blank') Add software design
+                li
+                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/add' target='_blank') Add hardware MES
+                li
+                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/add' target='_blank') Add software MES           
+            li
+              a.dropdown-item(href='#') Get Info
+              ul.submenu.dropdown-menu
+                li
+                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareDesign/get' target='_blank') Get hardware design
+                li
+                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareDesign/get' target='_blank') Get software design
+                li
+                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/get' target='_blank') Get hardware MES
+                li
+                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/get' target='_blank') Get software MES           
+            a.dropdown-item(href='#' target='_blank') Budget &amp; Heads
+            a.dropdown-item(href='#' target='_blank') Utilization
+            a.dropdown-item(href='#' target='_blank') Purchase &amp; Procurement
+            a.dropdown-item(href='#' target='_blank') Expenditure
+            a.dropdown-item(href='#' target='_blank') Balance Sheets
+            a.dropdown-item(href='#' target='_blank') Record Generation
+            
         //
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  More items  </a>
