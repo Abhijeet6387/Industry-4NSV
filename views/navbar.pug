@@ -217,9 +217,50 @@ header.bg-light
                   a.dropdown-item(href='#' target='_blank') RFID 
                 li
                   a.dropdown-item(href='#' target='_blank') Instrumentation 
-        li.nav-item
-          a.nav-link(href='#' target='_blank' style='color: #f5dede;')
-            b Establishment
+        //- li.nav-item
+        //-   a.nav-link(href='#' target='_blank' style='color: #f5dede;')
+        //-     b Establishment
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown') 
+            b Establishment  
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#')  Dropdown item 1 
+            li
+              a.dropdown-item.dropdown-toggle(href='#')  Dropdown item 2 
+              ul.submenu.dropdown-menu
+                li
+                  a.dropdown-item(href='') Submenu item 1
+                li
+                  a.dropdown-item(href='') Submenu item 2
+                li
+                  a.dropdown-item(href='') Submenu item 3
+            li
+              a.dropdown-item.dropdown-toggle(href='#')  Dropdown item 3 
+              ul.submenu.dropdown-menu
+                li
+                  a.dropdown-item(href='') Another submenu 1
+                li
+                  a.dropdown-item(href='') Another submenu 2
+                li
+                  a.dropdown-item(href='') Another submenu 3
+                li
+                  a.dropdown-item(href='') Another submenu 4
+            li
+              a.dropdown-item.dropdown-toggle(href='#')  Dropdown item 4 
+              ul.submenu.dropdown-menu
+                li
+                  a.dropdown-item(href='') Another submenu 1
+                li
+                  a.dropdown-item(href='') Another submenu 2
+                li
+                  a.dropdown-item(href='') Another submenu 3
+                li
+                  a.dropdown-item(href='') Another submenu 4
+            li
+              a.dropdown-item(href='#')  Dropdown item 4 
+            li
+              a.dropdown-item(href='#')  Dropdown item 5 
         li.nav-item.dropdown
           a.nav-link.dropdown-toggle(href='#' target='_blank' data-toggle='dropdown' style='color: #f5dede;')
             b Status &amp; Updates
