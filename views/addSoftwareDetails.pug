@@ -9,7 +9,7 @@ include navbar.pug
       margin-left : auto;\
       margin-right: auto;\
       width: 25%')
-        form(action='/softwareDesign/add' method='post' target='_blank')
+        form(action='/softwareDesign/add' method='post' target='/softwareDesign/get')
           .form-group
             label(for='Manufacturer') Manufacturer:
             input#Manufacturer.form-control(type='text' placeholder='Enter Manufacturer' name='Manufacturer')

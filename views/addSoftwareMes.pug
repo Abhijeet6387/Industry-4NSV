@@ -8,7 +8,7 @@ include navbar.pug
       margin-left : auto;\
       margin-right: auto;\
       width: 25%')
-        form(action='/softwareMES/add' method='post' target='_blank')
+        form(action='/softwareMES/add' method='post' target='/softwareMES/get')
           .form-group
             label(for='Softwares') Softwares:
             input#Softwares.form-control(type='text' placeholder='Enter Softwares' name='Softwares')

@@ -8,7 +8,7 @@ include navbar.pug
       margin-left : auto;\
       margin-right: auto;\
       width: 25%')
-        form(action='/hardwareMES/add' method='post' target='_blank')
+        form(action='/hardwareMES/add' method='post' target='/hardwareMES/get')
           .form-group
             label(for='Specification') Specification:
             input#Specification.form-control(type='text' placeholder='Enter Specification' name='Specification')
