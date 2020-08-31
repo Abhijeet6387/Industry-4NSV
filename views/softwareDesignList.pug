@@ -29,7 +29,27 @@ include navbar.pug
                   td #{item.price}
                   td #{item.Status}
                   td 
-                    i.fa.fa-edit
+                    a(href='/softwareDesign/edit/'+ item._id) edit
+                  //- td
+                  //-   i.fa.fa-trash    
                   td
-                    i.fa.fa-trash            
+                    i.fa.fa-trash.delete-article(href='#',data-id=item._id)
+                    //- a(class='button delete-todo' data-articleid= item._id href="#") Delete
+                    //- button(onclick="document.getElementById('id01').style.display='block'") Open Modal
+                    //- #id01.modal
+                    //-   span.close(onclick="document.getElementById('id01').style.display='none'" title='Close Modal') &times;
+                    //-   form.modal-content(onsubmit='http://localhost:3000/softwareDesign/delete/#{item._id}')
+                    //-     .container
+                    //-       h1 #{item._id}
+                    //-       p Are you sure you want to delete your account?
+                    //-       .clearfix
+                    //-         button.cancelbtn(type='button') Cancel
+                    //-         button.deletebtn(type='button') Delete        
+                    //- form(method="DELETE", action='/softwareDesign/delete/'+item._id)
+                    //-     .form-row
+                    //-         .form-group.col
+                    //-             input.form-control(type='text', id=item._id)
+                    //-     button.btn.btn-success Delete   
+                          
+
 include footer.pug

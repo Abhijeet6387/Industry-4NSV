@@ -12,9 +12,11 @@ router.get("/get",function(req,res){
     softwareDesign.find({},function(err,softwaredesign){
         if(err)
         {
-            console.log("error");
+            res.redirect("/softwareDesign/get");
+            console.log(err);
         }
         else{
+            // console.log(softwaredesign);
             res.render("softwareDesignList",{softwaredesign:softwaredesign})
         }
     })
@@ -27,32 +29,38 @@ router.post("/add",function(req,res){
 
    softwareDesign.create(req.body,function(err,newlyCreatedsoftwareDesign){
         if (err){
+            res.redirect("/softwareDesign/get");
             console.log(err);
         }
         else{
-            res.redirect("/softwareDesign/get");
-            // res.send(newlyCreatedsoftwareDesign);
+            // res.redirect("/softwareDesign/get");
+            res.send(newlyCreatedsoftwareDesign);
+            console.log(newlyCreatedsoftwareDesign);
         } 
     })
 })
 //show route
-router.get("/softwaredesign/:id",function(req,res){
+router.get("/edit/:id",function(req,res){
     softwareDesign.findById(req.params.id,function(err,foundSoftwareDesign){
         if(err)
         {
-            res.redirect("/softwaredesign");
+            res.redirect("/softwareDesign/get");
+            console.log(err);
         }
         else{
-            res.send("show",{foundSoftwareDesign: foundSoftwareDesign })
+            // res.send("show",{foundSoftwareDesign: foundSoftwareDesign })
+            res.render("editSoftwareDetail",{item:foundSoftwareDesign})
         }
     })
 });
 //edit route
 router.get("/softwaredesign/:id/edit",function(req,res){
+    
     softwareDesign.findById(req.params.id,function(err,foundSoftwareDesign){
         if(err)
         {
-            res.redirect("/softwaredesign");
+            res.redirect("/softwareDesign/get");
+            console.log(err);
         }
         else{
             res.send("edit",{softwareDesign: foundSoftwareDesign})
@@ -60,23 +68,29 @@ router.get("/softwaredesign/:id/edit",function(req,res){
     })
 //update route    
 })
-router.put("/softwaredesign/:id",function(req,res){
+router.post("/update/:id",function(req,res){
     softwareDesign.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
-            res.redirect("/softwaredesign");
+            res.redirect("/softwareDesign/get");
+            console.log(err);
         }else{
-            res.redirect("/softwaredesign/"+ req.params.id);
+            res.redirect("/softwareDesign/get");
+            // res.send("updated");
         }
     })
 })
 //delete route
-router.delete("/softwaredesign/:id",function(req,res){
+router.delete("/delete/:id",function(req,res){
     softwareDesign.findByIdAndRemove(req.params.id,function(err,deletesoftwareDesign){
         if(err){
-            res.redirect("/softwaredesign");
+            // res.redirect("/softwaredesign");
+            console.log("err is "+err);
         }
         else{
-            res.redirect("/softwaredesign");
+            // res.redirect("/softwaredesign");
+            res.send("deleted");
+            console.log("deleted")
+            // res.redirect("/softwareDesign/get");
         }
     })
 })
