@@ -29,7 +29,8 @@ include navbar.pug
                   td #{item.price}
                   td #{item.Status}
                   td 
-                    i.fa.fa-edit(href='/softwareDesign/edit/'+ item._id)
+                    a(href='/softwareDesign/edit/'+ item._id)
+                      i.fa.fa-edit
                   //- td
                   //-   i.fa.fa-trash    
                   td
