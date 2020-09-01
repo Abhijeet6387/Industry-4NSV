@@ -37,7 +37,8 @@ include navbar.pug
                   td #{item.BoughtFor}
                   td #{item.Status}  
                   td 
-                    a(href='/hardwareMES/edit/'+ item._id) edit
+                    a(href='/hardwareMES/edit/'+ item._id)
+                      i.fa.fa-edit(style='color:#000;')
                   td
                     i.fa.fa-trash.delete-article3(href='#',data-id=item._id)              
 include footer.pug
