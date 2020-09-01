@@ -54,20 +54,20 @@ router.get("/edit/:id",function(req,res){
     })
 });
 //edit route
-router.get("/softwaredesign/:id/edit",function(req,res){
+// router.get("/softwaredesign/:id/edit",function(req,res){
     
-    softwareDesign.findById(req.params.id,function(err,foundSoftwareDesign){
-        if(err)
-        {
-            res.redirect("/softwareDesign/get");
-            console.log(err);
-        }
-        else{
-            res.send("edit",{softwareDesign: foundSoftwareDesign})
-        }
-    })
-//update route    
-})
+//     softwareDesign.findById(req.params.id,function(err,foundSoftwareDesign){
+//         if(err)
+//         {
+//             res.redirect("/softwareDesign/get");
+//             console.log(err);
+//         }
+//         else{
+//             res.send("edit",{softwareDesign: foundSoftwareDesign})
+//         }
+//     })
+// //update route    
+// })
 router.post("/update/:id",function(req,res){
     softwareDesign.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){

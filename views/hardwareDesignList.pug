@@ -37,7 +37,7 @@ include navbar.pug
                   td #{item.BoughtFor}
                   td #{item.Status}
                   td 
-                    i.fa.fa-edit
+                    a(href='/hardwareDesign/edit/'+ item._id) edit
                   td
-                    i.fa.fa-trash           
+                    i.fa.fa-trash.delete-article4(href='#',data-id=item._id)        
 include footer.pug

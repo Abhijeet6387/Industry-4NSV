@@ -36,47 +36,51 @@ router.post("/add",function(req,res){
     })
 })
 //show route
-router.get("/hardwaremes/:id",function(req,res){
+router.get("/edit/:id",function(req,res){
     hardwareMes.findById(req.params.id,function(err,foundHardwareMes){
         if(err)
         {
-            res.redirect("/hardwaremes");
+            res.redirect("/hardwareMES/get");
+            console.log(err);
         }
         else{
-            res.send("show",{foundHardwareMes: foundHardwareMes })
+            res.render("editHardwareMes",{item: foundHardwareMes })
         }
     })
 });
-//edit route
-router.get("/hardwaremes/:id/edit",function(req,res){
-    hardwareMes.findById(req.params.id,function(err,foundHardwareMes){
-        if(err)
-        {
-            res.redirect("/hardwaremes");
-        }
-        else{
-            res.send("edit",{hardwareMes: foundHardwareMes})
-        }
-    })
-//update route    
-})
-router.put("/hardwaremes/:id",function(req,res){
+// //edit route
+// router.get("/hardwaremes/:id/edit",function(req,res){
+//     hardwareMes.findById(req.params.id,function(err,foundHardwareMes){
+//         if(err)
+//         {
+//             res.redirect("/hardwaremes");
+//         }
+//         else{
+//             res.send("edit",{hardwareMes: foundHardwareMes})
+//         }
+//     })
+// //update route    
+// })
+router.post("/update/:id",function(req,res){
     hardwareMes.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
-            res.redirect("/hardwaremes");
+            res.redirect("/hardwareMES/get");
+            console.log(err);
         }else{
-            res.redirect("/hardwaremes/"+ req.params.id);
+            res.redirect("/hardwareMES/get");
         }
     })
 })
 //delete route
-router.delete("/hardwaremes/:id",function(req,res){
+router.delete("/delete/:id",function(req,res){
     hardwareMes.findByIdAndRemove(req.params.id,function(err,deletehardwareMes){
         if(err){
-            res.redirect("/hardwaremes");
+           
+            console.log(err);
         }
         else{
-            res.redirect("/hardwaremes");
+            res.send("deleted");
+            console.log("deleted")
         }
     })
 })

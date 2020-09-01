@@ -27,7 +27,7 @@ include navbar.pug
                   td #{item.Price}
                   td #{item.Order}
                   td 
-                    i.fa.fa-edit
+                    a(href='/softwareMES/edit/'+ item._id) edit
                   td
-                    i.fa.fa-trash            
+                    i.fa.fa-trash.delete-article2(href='#',data-id=item._id)        
 include footer.pug

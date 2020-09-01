@@ -36,47 +36,50 @@ router.post("/add",function(req,res){
     })
 })
 //show route
-router.get("/softwaremes/:id",function(req,res){
+router.get("/edit/:id",function(req,res){
     softwareMes.findById(req.params.id,function(err,foundSoftwareMes){
         if(err)
         {
             res.redirect("/softwaremes");
+            console.log(err);
         }
         else{
-            res.send("show",{foundSoftwareMes: foundSoftwareMes })
+            res.render("editSoftwareMes",{item:foundSoftwareMes})
         }
     })
 });
 //edit route
-router.get("/softwaremes/:id/edit",function(req,res){
-    softwareMes.findById(req.params.id,function(err,foundSoftwareMes){
-        if(err)
-        {
-            res.redirect("/softwaremes");
-        }
-        else{
-            res.send("edit",{softwareMes: foundSoftwareMes})
-        }
-    })
-//update route    
-})
-router.put("/softwaremes/:id",function(req,res){
+// router.get("/softwaremes/:id/edit",function(req,res){
+//     softwareMes.findById(req.params.id,function(err,foundSoftwareMes){
+//         if(err)
+//         {
+//             res.redirect("/softwaremes");
+//         }
+//         else{
+//             res.send("edit",{softwareMes: foundSoftwareMes})
+//         }
+//     })
+// //update route    
+// })
+router.post("/update/:id",function(req,res){
     softwareMes.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
-            res.redirect("/softwaremes");
+            res.redirect("/softwareMES/get");
+            console.log(err);
         }else{
-            res.redirect("/softwaremes/"+ req.params.id);
+            res.redirect("/softwareMES/get");
         }
     })
 })
 //delete route
-router.delete("/softwaremes/:id",function(req,res){
+router.delete("/delete/:id",function(req,res){
     softwareMes.findByIdAndRemove(req.params.id,function(err,deletesoftwareMes){
         if(err){
-            res.redirect("/softwaremes");
+            console.log("err is "+err);
         }
         else{
-            res.redirect("/softwaremes");
+            res.send("deleted");
+            console.log("deleted")
         }
     })
 })

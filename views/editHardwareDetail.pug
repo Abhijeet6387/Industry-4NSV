@@ -1,0 +1,50 @@
+include navbar.pug
+.bg-light
+  .container.pt-3.pb-5
+    h3.text-center.pt-2.pb-2
+      b Edit Hardware Detail
+    .card
+      .card-body(style='display: block;\
+      margin-left : auto;\
+      margin-right: auto;\
+      width: 25%')
+        form(action='/hardwareDesign/update/'+item._id method='post' target='_blank')
+          .form-group
+            label(for='Specification') Specification:
+            input#Specification.form-control(type='text' value=item.Specification name='Specification')
+          .form-group
+            label(for='RequiredAt') RequiredAt:
+            input#RequiredAt.form-control(type='text' value=item.RequiredAt name='RequiredAt')
+          .form-group
+            label(for='PricePerUnit') PricePerUnit:
+            input#PricePerUnit.form-control(type='text' value=item.PricePerUnit name='PricePerUnit')
+          .form-group
+            label(for='NoOfUnits') NoOfUnits:
+            input#NoOfUnits.form-control(type='text' value=item.NoOfUnits name='NoOfUnits')
+          .form-group
+            label(for='Total') Total:
+            input#Total.form-control(type='text' value=item.Total name='Total')
+          .form-group
+            label(for='PurchasedQuantity') PurchasedQuantity:
+            input#PurchasedQuantity.form-control(type='text' value=item.PurchasedQuantity name='PurchasedQuantity')
+          .form-group
+            label(for='PriceInLakhs') PriceInLakhs:
+            input#PriceInLakhs.form-control(type='text' value=item.PriceInLakhs name='PriceInLakhs')
+          .form-group
+            label(for='BoughtFor') BoughtFor:
+            input#BoughtFor.form-control(type='text' value=item.BoughtFor name='BoughtFor')
+          .form-group
+            label(for='Status')  Status:
+            input#Status.form-control(type='text' value=item.Status name='Status')
+          button.block(type='submit' style=' display: block;\
+          width: 100%;\
+          border: none;\
+          background-color:#cd5c5c;\
+          padding: 14px 28px;\
+          color:#ffffff;\
+          border-radius:16px;\
+          font-size: 16px;\
+          cursor: pointer;\
+          text-align: center;')
+            b Submit
+include footer.pug
