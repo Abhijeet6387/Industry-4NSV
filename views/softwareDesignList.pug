@@ -34,8 +34,10 @@ include navbar.pug
                   //- td
                   //-   i.fa.fa-trash    
                   td
-                    i.fa.fa-trash.delete-article(href='#',data-id=item._id)
-                    //- a(class='button delete-todo' data-articleid= item._id href="#") Delete
+                    a(href='#',data-id=item._id)  
+                      i.fa.fa-trash.delete-article4(style='color:#000;') 
+                    //- a(class='button delete-todo' data-articleid= item._ida(href='#',data-id=item._id)  
+                     Delete
                     //- button(onclick="document.getElementById('id01').style.display='block'") Open Modal
                     //- #id01.modal
                     //-   span.close(onclick="document.getElementById('id01').style.display='none'" title='Close Modal') &times;
