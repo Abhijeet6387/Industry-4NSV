@@ -40,5 +40,6 @@ include navbar.pug
                     a(href='/hardwareDesign/edit/'+ item._id)
                       i.fa.fa-edit(style='color:#000;')
                   td
-                    i.fa.fa-trash.delete-article4(href='#',data-id=item._id)      
+                    a(href='#',data-id=item._id)
+                      i.fa.fa-trash.delete-article4(style='color:#000;')      
 include footer.pug
