@@ -17,7 +17,15 @@ router.get("/get",function(req,res){
         }
         else{
             // console.log(softwaredesign);
-            res.render("softwareDesignList",{softwaredesign:softwaredesign})
+            var total= 0.0;
+            for (i = 0; i < softwaredesign.length; i++) {
+                var obj= softwaredesign[i];
+                if(obj.price!='null')
+                total += parseFloat(obj.price)
+              }
+              console.log(total);
+            res.render("softwareDesignList",{total:total,softwaredesign:softwaredesign})
+
         }
     })
 })

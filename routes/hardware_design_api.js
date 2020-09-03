@@ -17,7 +17,14 @@ router.get("/get",function(req,res){
         }
         else{
             // console.log(hardwaredesign);
-            res.render("hardwareDesignList",{hardwaredesign:hardwaredesign})
+            var total= 0.0;
+            for (i = 0; i < hardwaredesign.length; i++) {
+                var obj= hardwaredesign[i];
+                if(obj.Total!='NULL')
+                total += parseFloat(obj.Total)
+              }
+              console.log(total);
+            res.render("hardwareDesignList",{total:total,hardwaredesign:hardwaredesign})
         }
     })
 })

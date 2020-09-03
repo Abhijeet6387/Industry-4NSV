@@ -15,7 +15,15 @@ router.get("/get",function(req,res){
             console.log("error");
         }
         else{
-            res.render("softwareMESlist",{softwareMes:softwareMes})
+            var total= 0.0;
+            for (i = 0; i < softwareMes.length; i++) {
+                var obj= softwareMes[i];
+                if(obj.Price!='NULL')
+                total += parseFloat(obj.Price)
+              }
+              console.log(total);
+             
+            res.render("softwareMESlist",{total:total,softwareMes:softwareMes})
         }
     })
 })

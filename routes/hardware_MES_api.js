@@ -15,7 +15,14 @@ router.get("/get",function(req,res){
             console.log("error");
         }
         else{
-            res.render("hardwareMESlist",{hardwaremes:hardwaremes})
+            var total= 0.0;
+            for (i = 0; i < hardwaremes.length; i++) {
+                var obj= hardwaremes[i];
+                if(obj.Total!='null')
+                total += parseFloat(obj.Total)
+              }
+              console.log(total);
+            res.render("hardwareMESlist",{total:total,hardwaremes:hardwaremes})
         }
     })
 })
