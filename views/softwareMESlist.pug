@@ -5,8 +5,7 @@ include navbar.pug
       .container
           .container
             h3.pb-2.pr-2
-              b Software MES List  | Total price (in Rupees): #{total}
-              
+              b Software MES List
               a(href='https://industry-4nsv.herokuapp.com/softwareMES/add')
                 i.fa.fa-plus(style='color:#000; font-size:24px; float: right; margin-left: -50%;')
       #tb.container.table-responsive
@@ -30,7 +29,6 @@ include navbar.pug
                   td 
                     a(href='/softwareMES/edit/'+ item._id)
                       i.fa.fa-edit(style='color:#000;')
-                  td
-                    a(href='#',data-id=item._id)  
-                      i.fa.fa-trash.delete-article2(style='color:#000;')        
+                  td  
+                    i.fa.fa-trash.delete-article2(href='#',data-id=item._id)         
 include footer.pug
