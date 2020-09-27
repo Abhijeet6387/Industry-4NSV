@@ -36,14 +36,14 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         h4.modal-title Login
         button.close(type='button' data-dismiss='modal') &times;
       .modal-body
-        form
+        form#loginform
           .form-row
             .form-group.col-sm-4
-              label.sr-only(for='exampleInputEmail3') Email address
-              input#exampleInputEmail3.form-control.form-control-sm.form-control-sm.mr-1(type='email' placeholder='Enter email')
+              label.sr-only(for='email') Email address
+              input#email.form-control.form-control-sm.form-control-sm.mr-1(type='email' placeholder='Enter email')
             .form-group.col-sm-4
-              label.sr-only(for='exampleInputPassword3') Password
-              input#exampleInputPassword3.form-control.form-control-sm.mr-1(type='password' placeholder='Password')
+              label.sr-only(for='password') Password
+              input#password.form-control.form-control-sm.mr-1(type='password' placeholder='Password')
             .col-sm-auto
               .form-check
                 input.form-check-input(type='checkbox')
@@ -240,7 +240,7 @@ header.bg-light
                 li
                   a.dropdown-item(href='https://industry-4nsv.herokuapp.com/hardwareMES/get' target='_blank') Get hardware MES
                 li
-                  a.dropdown-item(href='https://industry-4nsv.herokuapp.com/softwareMES/get' target='_blank') Get software MES           
+                  a#softwaremes.dropdown-item(href='http://localhost:3000/softwareMES/get') Get software MES           
             a.dropdown-item(href='#' target='_blank') Budget &amp; Heads
             a.dropdown-item(href='#' target='_blank') Utilization
             a.dropdown-item(href='#' target='_blank') Purchase &amp; Procurement

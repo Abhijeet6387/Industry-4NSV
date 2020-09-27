@@ -30,6 +30,17 @@ router.get('/getevent',(req,res) =>{
      
     
 });
+
+router.get('/getbyid/:id',(req,res)=>{
+    Event.findById(req.params.id,(err,result)=>{
+        if(err)
+        console.log(err);
+        else{
+            res.json(result);
+        }
+    })
+
+})
 router.post('/addevent',(req,res) =>{
  
     const event = new Event({

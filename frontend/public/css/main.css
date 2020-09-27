@@ -1,0 +1,32 @@
+a.dropdown-item:hover {
+    background-color: #f5dede;
+    color: #cd5c5c;
+    }
+    .footer {
+    background-color: #cd5c5c;
+    color: black;
+    margin: 0px auto;
+    padding: 20px 0px;
+    }
+    .prev {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    transform: translateY(-50%);
+    }
+    .next {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    }
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 5px solid #555;
+   }  

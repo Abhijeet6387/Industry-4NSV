@@ -1,6 +1,8 @@
 const express = require("express");
 const router= express.Router(); 
 const mongoose = require("mongoose");
+const jwt= require('jsonwebtoken');
+const checkauth = require("../auth.js");
 const hardwareDesign=require("../models/hardware_design_model");
 var path = require("path")
 
@@ -8,7 +10,12 @@ var path = require("path")
 
 //Restful routes
 //index route
-router.get("/get",function(req,res){
+router.get("/get",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded= jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+    if(userrole=='admin'){
     hardwareDesign.find({},function(err,hardwaredesign){
         if(err)
         {
@@ -24,66 +31,91 @@ router.get("/get",function(req,res){
                 total += parseFloat(obj.Total)
               }
               console.log(total);
-            res.render("hardwareDesignList",{total:total,hardwaredesign:hardwaredesign})
+              res.status(200).json({message:"Success",total:total,hardwaredesign:hardwaredesign})
         }
     })
+    }   
+    else{
+    
+       res.status(403).json({message:"Unauthorized"})
+    }
 })
-//new route
-router.get("/add",function(req,res){
-    res.render("addHardwareDetails");
-})
-router.post("/add",function(req,res){
-//    console.log(req.body);
+
+router.post("/add",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded= jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+    if(userrole=='admin'){
    hardwareDesign.create(req.body,function(err,newlyCreatedhardwareDesign){
         if (err){
             console.log(err);
-            res.redirect("/hardwareDesign/get");
+            
         }
         else{
-            res.redirect("/hardwareDesign/get");
+            res.status(200).json({message:"Added"});
             // res.send(newlyCreatedhardwareDesign);
         } 
     })
+    }   
+    else{
+      
+       res.status(403).json({message:"Unauthorized"})
+    }
 })
-//show route
-router.get("/hardwaredesign/:id",function(req,res){
-    hardwareDesign.findById(req.params.id,function(err,foundHardwareDesign){
-        if(err)
-        {
-            res.redirect("/hardwaredesign");
-        }
-        else{
-            res.send("show",{foundHardwareDesign: foundHardwareDesign })
-        }
-    })
-});
+
+
 //edit route
-router.get("/edit/:id",function(req,res){
+router.get("/details/:id",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded= jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+    if(userrole=='admin'){
     hardwareDesign.findById(req.params.id,function(err,foundHardwareDesign){
         if(err)
         {
-            res.redirect("/hardwareDesign/get");
+           
             console.log(err);
 
         }
         else{
-            res.render("editHardwareDetail",{item: foundHardwareDesign})
+            res.status(200).json({message:"Success",item:foundHardwareDesign});
         }
     })
-//update route    
+   }   
+    else{
+       
+       res.status(403).json({message:"Unauthorized"})
+    }   
 })
-router.post("/update/:id",function(req,res){
+router.post("/update/:id",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded= jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+    if(userrole=='admin'){
     hardwareDesign.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
-            res.redirect("/hardwareDesign/get");
+            
             console.log(err);
         }else{
-            res.redirect("/hardwareDesign/get");
+            res.status(200).json({message:"updated"});
         }
     })
+    }   
+    else{
+      
+        res.status(403).json({message:"Unauthorized"})
+    }
 })
 //delete route
-router.delete("/delete/:id",function(req,res){
+router.delete("/delete/:id",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded= jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+    if(userrole=='admin'){
     hardwareDesign.findByIdAndRemove(req.params.id,function(err,deletehardwareDesign){
         if(err){
             // res.redirect("/hardwaredesign");
@@ -91,10 +123,14 @@ router.delete("/delete/:id",function(req,res){
         }
         else{
             // res.redirect("/hardwaredesign");
-            res.send("deleted");
-            console.log("deleted")
+            res.status(200).json({message:"deleted"});
         }
     })
+    }   
+    else{
+        
+        res.status(403).json({message:"Unauthorized"})
+    }
 })
        
        

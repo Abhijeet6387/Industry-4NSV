@@ -2,94 +2,128 @@ const express = require("express");
 const router= express.Router(); 
 const mongoose = require("mongoose");
 const hardwareMes=require("../models/hardware_MES_model");
+const jwt= require('jsonwebtoken');
+const checkauth = require("../auth.js");
 var path = require("path")
 
 
-
-//Restful routes
-//index route
-router.get("/get",function(req,res){
-    hardwareMes.find({},function(err,hardwaremes){
+router.get("/get",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded=jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+   if(userrole=='admin'){
+    hardwareMes.find({},function(err,hardwareMES){
         if(err)
         {
             console.log("error");
         }
         else{
             var total= 0.0;
-            for (i = 0; i < hardwaremes.length; i++) {
-                var obj= hardwaremes[i];
+            for (i = 0; i < hardwareMES.length; i++) {
+                var obj= hardwareMES[i];
                 if(obj.Total!='null')
                 total += parseFloat(obj.Total)
               }
               console.log(total);
-            res.render("hardwareMESlist",{total:total,hardwaremes:hardwaremes})
+              res.status(200).json({message:"Success",total:total,hardwareMES:hardwareMES})
         }
     })
+    }
+    else
+    {
+    res.status(403).json({message:"Unauthorized"});
+    }
 })
-//new route
-router.get("/add",function(req,res){
-    res.render("addHardwareMes");
-})
-router.post("/add",function(req,res){
+
+router.post("/add",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded=jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+   if(userrole=='admin'){
 
    hardwareMes.create(req.body,function(err,newlyCreatedhardwareMes){
         if (err){
             console.log(err);
         }
         else{
-            // res.send(newlyCreatedhardwareMes)
-            res.redirect("/hardwareMES/get");
+            res.status(200).json({message:"Added"});
+            console.log(newlyCreatedhardwareMes);
         } 
     })
+    }
+    else
+    {
+    res.status(403).json({message:"Unauthorized"});
+    }
 })
-//show route
-router.get("/edit/:id",function(req,res){
+
+router.get("/details/:id",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded=jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+   if(userrole=='admin'){
     hardwareMes.findById(req.params.id,function(err,foundHardwareMes){
         if(err)
         {
-            res.redirect("/hardwareMES/get");
+           
             console.log(err);
         }
         else{
-            res.render("editHardwareMes",{item: foundHardwareMes })
+            res.status(200).json({message:"Success",item:foundHardwareMes});
         }
     })
+    }
+    else
+    {
+    res.status(403).json({message:"Unauthorized"});
+    }
 });
-// //edit route
-// router.get("/hardwaremes/:id/edit",function(req,res){
-//     hardwareMes.findById(req.params.id,function(err,foundHardwareMes){
-//         if(err)
-//         {
-//             res.redirect("/hardwaremes");
-//         }
-//         else{
-//             res.send("edit",{hardwareMes: foundHardwareMes})
-//         }
-//     })
-// //update route    
-// })
-router.post("/update/:id",function(req,res){
+
+
+router.post("/update/:id",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded=jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+   if(userrole=='admin'){
     hardwareMes.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
-            res.redirect("/hardwareMES/get");
             console.log(err);
         }else{
-            res.redirect("/hardwareMES/get");
+            res.status(200).json({message:"updated"});
         }
     })
+    }
+    else
+    {
+    res.status(403).json({message:"Unauthorized"});
+    }
 })
 //delete route
-router.delete("/delete/:id",function(req,res){
+router.delete("/delete/:id",checkauth,function(req,res){
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded=jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+   if(userrole=='admin'){
     hardwareMes.findByIdAndRemove(req.params.id,function(err,deletehardwareMes){
         if(err){
            
             console.log(err);
         }
         else{
-            res.send("deleted");
-            console.log("deleted")
+            res.status(200).json({message:"deleted"});
         }
     })
+  }
+    else
+    {
+
+    res.status(403).json({message:"Unauthorized"});
+    }
 })
        
        
