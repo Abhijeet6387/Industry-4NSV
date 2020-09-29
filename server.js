@@ -1,9 +1,9 @@
 const express = require("express"); 
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const path = require('path');
 const app = express();
 const db = process.env.MONGODB_URI || "mongodb+srv://aditya:Sriganesh@3@cluster0-knzmq.mongodb.net/test"
-const static_api = require("./routes/static_api");
 const event_api=require("./routes/event_api");
 const member_api= require("./routes/member_api");
 const component_api=require("./routes/component_api");
@@ -18,31 +18,24 @@ const update_api = require("./routes/update_api");
 const Admin_router=require('./routes/admin_api');
 
 
-const path=require("path");
+////middle ware set up
 
 app.use("/admin",Admin_router)
 
 
-
-console.log(db)
 
 app.use(bodyParser.urlencoded({
     extended:false             
 }))
 app.use(bodyParser.json()); 
 
+app.use('/public', express.static(__dirname + '/public'));
 
 
 
 
 
-
-
-// app.set('view engine','pug');
-// app.set('views', __dirname + '/views');  
-// app.use('/public', express.static(__dirname + '/public'));
-
-// app.use('/',static_api);
+///. API's connections
 app.use('/event',event_api);
 app.use('/member',member_api);
 app.use('/component',component_api);
@@ -54,13 +47,41 @@ app.use('/budget',budget_api);
 app.use('/employee',employee_api);
 app.use('/meeting',meeting_api);
 app.use('/update',update_api);
+app.use(express.static(path.join(__dirname,  'frontend','build')));
+
+///// static rendering starts here ....
+
+app.get("/StaticPageName",function(req,res){
+    res.sendFile(path.join(__dirname, "StaticFolder",'StaticPage.html'));
+})
 
 
-    app.use(express.static(path.join(__dirname,  'frontend','build')));
-    app.get("*", (req, res) => {
+
+
+
+
+
+
+
+
+////react part
+app.get("*", (req, res) => {
       res.sendFile(path.join(__dirname,  'frontend','build','index.html'));
-      });
+});
 
+
+
+
+
+
+
+
+
+
+
+
+
+///// DB and server setup
 mongoose.Promise=global.Promise;
 
 

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-class ViewSoftwareMes extends Component {
+class ViewMeetingRUTAG extends Component {
     constructor(props){
         super(props);
             this.state={
                 id:'',
-                Softwares: '',
-                Quantity : '',
-                Price : '',
-                Order: ''
+                Title:'',
+                Objective:'',
+                By:'',
+                For:'',
+                Link:'',
+                WhichDate:'',
+                WhichTime:'',
+                CreatedTime:'',
             };
             this.changeHandler = this.changeHandler.bind(this);
             this.deleteHandler = this.deleteHandler.bind(this);
@@ -16,18 +20,23 @@ class ViewSoftwareMes extends Component {
         }
         componentDidMount(){
             const token= localStorage.getItem("Nsvtoken");
-            axios.get('/softwareMES/details/'+this.props.match.params.id,{headers : { 
+            axios.get('/meeting/detailsRUTAG/'+this.props.match.params.id,{headers : { 
                 'Authorization' :"Bearer "+token}})
             .then(response => {
                 // alert("success");
                if(response.data.message==="Success"){
                 
                 this.setState({
-                   id: response.data.item._id ,
-                   Softwares: response.data.item.Softwares,
-                   Quantity : response.data.item.Quantity,
-                   Price : response.data.item.Price,
-                   Order: response.data.item.Order
+              
+                   id: response.data.item._id,
+                   Title: response.data.item.Title,
+                   Objective: response.data.item.Objective,
+                   By: response.data.item.By,
+                   For: response.data.item.For,
+                   Link: response.data.item.Link,
+                   WhichDate: response.data.item.WhichDate,
+                   WhichTime: response.data.item.WhichTime,
+                   CreatedTime: response.data.item.CreatedTime
                    
                 });
                }
@@ -52,14 +61,15 @@ class ViewSoftwareMes extends Component {
             const token= localStorage.getItem("Nsvtoken");
             const updated={
         
-               
-                Softwares : this.state.Softwares,
-                Quantity : this.state.Quantity,
-                Price: this.state.Price,
-                Order: this.state.Order,
+                Title: this.state.Title,
+                Objective: this.state.Objective,
+                Link: this.state.Link,
+                WhichDate: this.state.WhichDate,
+                WhichTime: this.state.WhichTime,
+                By:this.state.By
             }
         
-            axios.post('/softwareMES/update/'+this.props.match.params.id, updated,{headers : { 
+            axios.post('/meeting/updateRUTAG/'+this.props.match.params.id, updated,{headers : { 
                 'Authorization' :"Bearer "+token}})
             .then(res =>{
              alert(res.data.message)
@@ -78,13 +88,14 @@ class ViewSoftwareMes extends Component {
     
         deleteHandler(){
             const token= localStorage.getItem("Nsvtoken");
-            axios.delete('/softwareMES/delete/'+this.props.match.params.id,{headers : { 
-                'Authorization' :"Bearer "+token}})
+            axios.delete('/meeting/deleteRUTAG/'+this.props.match.params.id,{headers : { 
+                'Authorization' :"Bearer "+token,  'Data': this.state.By}
+                  })
             .then(
                 res =>{
     
                     alert(res.data.message)
-                    this.props.history.push('/softwareMes');
+                    this.props.history.push('/meetingRUTAG');
                     window.location.reload();
                      
                 }
@@ -105,7 +116,7 @@ class ViewSoftwareMes extends Component {
                 <div className="container pt-4 pb-4">
                    <div className="container">
                         <h3 className="pb-2 pr-2">
-                          <b>Software MES Detail</b> 
+                          <b>Meeting Detail</b> 
                         </h3>
     
                     </div>
@@ -117,24 +128,44 @@ class ViewSoftwareMes extends Component {
                                 <td >{this.state.id}</td>
                             </tr>
                             <tr>
-                                <td >Softwares</td>
+                                <td >Title</td>
                                 <td >:</td>
-                                <td >{this.state.Softwares}</td>
+                                <td >{this.state.Title}</td>
                             </tr>
                             <tr>
-                                <td >Quantity</td>
+                                <td >Objective</td>
                                 <td>:</td>
-                                <td>{this.state.Quantity}</td>
+                                <td>{this.state.Objective}</td>
                             </tr>
                             <tr>
-                                <td >Price</td>
+                                <td >By</td>
                                 <td >:</td>
-                                <td >{this.state.Price}</td>
+                                <td >{this.state.By}</td>
                             </tr>
                             <tr>
-                                <td >Order</td>
+                                <td >For</td>
                                 <td >:</td>
-                                <td >{this.state.Order}</td>
+                                <td >{this.state.For}</td>
+                            </tr>
+                            <tr>
+                                <td >Meeting Link:</td>
+                                <td >:</td>
+                                <td >{this.state.Link}</td>
+                            </tr>
+                            <tr>
+                                <td >Meeting Date</td>
+                                <td >:</td>
+                                <td >{this.state.WhichDate}</td>
+                            </tr>
+                            <tr>
+                                <td >Meeting Time</td>
+                                <td >:</td>
+                                <td >{this.state.WhichTime}</td>
+                            </tr>
+                            <tr>
+                                <td >Created Time</td>
+                                <td >:</td>
+                                <td >{this.state.CreatedTime}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -158,24 +189,29 @@ class ViewSoftwareMes extends Component {
                                 <div className="modal-body">
                                 <form onSubmit={this.onSubmit}>
                                     <div className="form-group">
-                                        <label htmlFor="Softwares">Softwares:</label>
-                                        <input className="form-control" id="Softwares" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter Softwares" name="Softwares" value={this.state.Softwares}/>
+                                        <label htmlFor="Title">Title:</label>
+                                        <input className="form-control" id="Title" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter Title" name="Title" value={this.state.Title}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="Quantity">Quantity:</label>
-                                        <input className="form-control" id="Quantity" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter Quantity" name="Quantity" value={this.state.Quantity}/>
+                                        <label htmlFor="Objective">Objective:</label>
+                                        <input className="form-control" id="Objective" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter Objective" name="Objective" value={this.state.Objective}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="Price">Price:</label>
-                                        <input className="form-control" id="Price" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter Price" name="Price" value={this.state.Price}/>
+                                        <label htmlFor="Link">Meeting Link:</label>
+                                        <input className="form-control" id="Link" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter Link" name="Link" value={this.state.Link}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="Order">Order:</label>
-                                        <input className="form-control" id="Order" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter Order" name="Order" value={this.state.Order}/>
+                                        <label htmlFor="WhichDate">Meeting Date:</label>
+                                        <input className="form-control" id="WhichDate" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter WhichDate" name="WhichDate" value={this.state.WhichDate}/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="WhichTime">Meeting Time:</label>
+                                        <input className="form-control" id="WhichTime" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter WhichTime" name="WhichTime" value={this.state.WhichTime}/>
                                     </div>
                                     <button className="block" type="submit" style={{ display: "block",
                                     width: "100%",border: "none", backgroundColor:"#cd5c5c",padding: "14px 28px",    
@@ -216,6 +252,7 @@ class ViewSoftwareMes extends Component {
                 
             );
         }
+
 }
 
-export default ViewSoftwareMes;
+export default ViewMeetingRUTAG;

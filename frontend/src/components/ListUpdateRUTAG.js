@@ -15,14 +15,14 @@ const Update= props =>(
         <hr></hr>
         <p className="card-text">{props.update.Summary}</p>
         <a href={props.update.Link} className="card-link">Document link</a>
-        <Link to={"/viewUpdate/"+props.update._id} className="btn btn-primary float-right">
+        <Link to={"/viewUpdateRUTAG/"+props.update._id} className="btn btn-primary float-right">
               View 
         </Link>
       </div>
     </div>
 )
 
-class ListUpdate extends Component {
+class ListUpdateRUTAG extends Component {
     constructor(props){
         super(props);
         this.state={ update : []};
@@ -31,7 +31,7 @@ class ListUpdate extends Component {
     }
     componentDidMount(){
         const token= localStorage.getItem("Nsvtoken");
-        axios.get('/update/get',{headers : { 
+        axios.get('/update/getRUTAG',{headers : { 
             'Authorization' :"Bearer "+token}})
         .then(response => {
             // alert("success")
@@ -66,7 +66,7 @@ class ListUpdate extends Component {
                     <div className="container">
                         <div className="container">
                            <h3 className="pb-2 pr-2"><b>Updates </b>
-                           <Link to='/addUpdate'><i className="fa fa-plus" style={{color:"#000", fontSize:"24px", float: "right", marginLeft: "-50%"}}></i></Link></h3>
+                           <Link to='/addUpdateRUTAG'><i className="fa fa-plus" style={{color:"#000", fontSize:"24px", float: "right", marginLeft: "-50%"}}></i></Link></h3>
                         </div>
                     </div>
                     
@@ -81,4 +81,4 @@ class ListUpdate extends Component {
     }
 }
 
-export default ListUpdate;
+export default ListUpdateRUTAG;

@@ -39,7 +39,7 @@ class ViewBudget extends Component {
                }
             })
             .catch(function (error) {
-                alert("something went wrong")
+                alert("Unauthorize or slow internet")
     
                 console.log(error);
             })  
@@ -66,7 +66,7 @@ class ViewBudget extends Component {
               
             }).catch(
                 (err)=> {console.log(err)
-                  alert("Something Went Wrong")
+                alert("Unauthorize or slow internet")
                   window.location.reload();
               });
         }
@@ -90,7 +90,7 @@ class ViewBudget extends Component {
     
             ).catch(
                 (err)=> {console.log(err)
-                    alert("Something Went Wrong")
+                    alert("Unauthorize or slow internet")
                     
                     window.location.reload();
                 }   

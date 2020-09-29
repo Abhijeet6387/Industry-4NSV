@@ -44,7 +44,7 @@ class ViewUpdate extends Component {
                }
             })
             .catch(function (error) {
-                alert("something went wrong")
+                alert("Unauthorize or slow internet")
     
                 console.log(error);
             })  
@@ -58,7 +58,8 @@ class ViewUpdate extends Component {
         
                 Title:this.state.Title,
                 Summary:this.state.Summary,
-                Link:this.state.Link
+                Link:this.state.Link,
+                By:this.state.By
             }
         
             axios.post('/update/update/'+this.props.match.params.id, updated,{headers : { 
@@ -69,7 +70,7 @@ class ViewUpdate extends Component {
               
             }).catch(
                 (err)=> {console.log(err)
-                  alert("Something Went Wrong")
+                    alert("Unauthorize or slow internet")
                   window.location.reload();
               });
         }
@@ -81,7 +82,8 @@ class ViewUpdate extends Component {
         deleteHandler(){
             const token= localStorage.getItem("Nsvtoken");
             axios.delete('/update/delete/'+this.props.match.params.id,{headers : { 
-                'Authorization' :"Bearer "+token}})
+                'Authorization' :"Bearer "+token,  'Data': this.state.By}
+                  })
             .then(
                 res =>{
     
@@ -93,7 +95,7 @@ class ViewUpdate extends Component {
     
             ).catch(
                 (err)=> {console.log(err)
-                    alert("Something Went Wrong")
+                    alert("Unauthorize or slow internet")
                     
                     window.location.reload();
                 }   
@@ -139,7 +141,7 @@ class ViewUpdate extends Component {
                                 <td >{this.state.For}</td>
                             </tr>
                             <tr>
-                                <td >Link:</td>
+                                <td >Document Link:</td>
                                 <td >:</td>
                                 <td >{this.state.Link}</td>
                             </tr>
@@ -180,7 +182,7 @@ class ViewUpdate extends Component {
                                         placeholder="Enter Summary" name="Summary" value={this.state.Summary}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="Link">Link:</label>
+                                        <label htmlFor="Link">Document Link:</label>
                                         <input className="form-control" id="Link" type="text" onChange={this.changeHandler}
                                         placeholder="Enter Link" name="Link" value={this.state.Link}/>
                                     </div>

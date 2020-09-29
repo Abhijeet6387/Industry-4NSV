@@ -33,7 +33,7 @@ class AddUpdate extends Component {
           
         }).catch(
             (err)=> {console.log(err)
-              alert("Something Went Wrong")
+             alert("Unauthorize or slow internet")
               this.props.history.push('/');
               window.location.reload();
           });
@@ -71,7 +71,7 @@ class AddUpdate extends Component {
                                         placeholder="Enter Summary" name="Summary" value={this.state.Summary}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="Link">Link:</label>
+                                        <label htmlFor="Link">Document Link:</label>
                                         <input className="form-control" id="Link" type="text" onChange={this.changeHandler}
                                         placeholder="Enter Link" name="Link" value={this.state.Link}/>
                                     </div>

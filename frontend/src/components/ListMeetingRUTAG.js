@@ -18,14 +18,14 @@ const Meeting= props =>(
           <p className="card-text">{props.meeting.Objective}</p>
           <br></br>
           <a href={props.meeting.Link} className="card-link">Meeting link</a>
-          <Link to={"/viewMeeting/"+props.meeting._id} className="btn btn-primary float-right">
+          <Link to={"/viewMeetingRUTAG/"+props.meeting._id} className="btn btn-primary float-right">
                 View 
           </Link>
         </div>
       </div>
 )
 
-class ListMeeting extends Component {
+class ListMeetingRUTAG extends Component {
     constructor(props){
         super(props);
         this.state={ meeting : []};
@@ -34,7 +34,7 @@ class ListMeeting extends Component {
     }
     componentDidMount(){
         const token= localStorage.getItem("Nsvtoken");
-        axios.get('/meeting/get',{headers : { 
+        axios.get('/meeting/getRUTAG',{headers : { 
             'Authorization' :"Bearer "+token}})
         .then(response => {
             // alert("success")
@@ -69,7 +69,7 @@ class ListMeeting extends Component {
                     <div className="container">
                         <div className="container">
                            <h3 className="pb-2 pr-2"><b>Meeting List </b>
-                           <Link to='/addMeeting'><i className="fa fa-plus" style={{color:"#000", fontSize:"24px", float: "right", marginLeft: "-50%"}}></i></Link></h3>
+                           <Link to='/addMeetingRUTAG'><i className="fa fa-plus" style={{color:"#000", fontSize:"24px", float: "right", marginLeft: "-50%"}}></i></Link></h3>
                         </div>
                     </div>
                     
@@ -83,4 +83,4 @@ class ListMeeting extends Component {
 
 }
 
-export default ListMeeting;
+export default ListMeetingRUTAG;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-class AddMeeting extends Component {
+class AddMeetingRUTAG extends Component {
     constructor(props){
         super(props);
 
@@ -32,11 +32,11 @@ class AddMeeting extends Component {
             WhichTime:this.state.WhichTime
         }
     
-        axios.post('/meeting/add', nw,{headers : { 
+        axios.post('/meeting/addRUTAG', nw,{headers : { 
             'Authorization' :"Bearer "+token}})
         .then(res =>{
          alert(res.data.message)
-         this.props.history.push('/meeting');
+         this.props.history.push('/meetingRUTAG');
          window.location.reload();
           
         }).catch(
@@ -109,4 +109,4 @@ class AddMeeting extends Component {
         }
 }
 
-export default AddMeeting;
+export default AddMeetingRUTAG;

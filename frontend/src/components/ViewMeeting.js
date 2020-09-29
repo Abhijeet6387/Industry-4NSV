@@ -49,7 +49,7 @@ class ViewMeeting extends Component {
                }
             })
             .catch(function (error) {
-                alert("something went wrong")
+                alert("Unauthorize or slow internet")
     
                 console.log(error);
             })  
@@ -66,17 +66,19 @@ class ViewMeeting extends Component {
                 Link: this.state.Link,
                 WhichDate: this.state.WhichDate,
                 WhichTime: this.state.WhichTime,
+                By:this.state.By
             }
         
             axios.post('/meeting/update/'+this.props.match.params.id, updated,{headers : { 
-                'Authorization' :"Bearer "+token}})
+                'Authorization' :"Bearer "+token,  'Data': this.state.By}
+                  })
             .then(res =>{
              alert(res.data.message)
              window.location.reload();
               
             }).catch(
                 (err)=> {console.log(err)
-                  alert("Something Went Wrong")
+                    alert("Unauthorize or slow internet")
                   window.location.reload();
               });
         }
@@ -88,7 +90,7 @@ class ViewMeeting extends Component {
         deleteHandler(){
             const token= localStorage.getItem("Nsvtoken");
             axios.delete('/meeting/delete/'+this.props.match.params.id,{headers : { 
-                'Authorization' :"Bearer "+token}})
+                'Authorization' :"Bearer "+token,  'Data': this.state.By}})
             .then(
                 res =>{
     
@@ -100,7 +102,7 @@ class ViewMeeting extends Component {
     
             ).catch(
                 (err)=> {console.log(err)
-                    alert("Something Went Wrong")
+                    alert("Unauthorize or slow internet")
                     
                     window.location.reload();
                 }   
@@ -146,22 +148,22 @@ class ViewMeeting extends Component {
                                 <td >{this.state.For}</td>
                             </tr>
                             <tr>
-                                <td >Link:</td>
+                                <td >Meeting Link:</td>
                                 <td >:</td>
                                 <td >{this.state.Link}</td>
                             </tr>
                             <tr>
-                                <td >WhichDate</td>
+                                <td >Meeting Date</td>
                                 <td >:</td>
                                 <td >{this.state.WhichDate}</td>
                             </tr>
                             <tr>
-                                <td >WhichTime</td>
+                                <td >Meeting Time</td>
                                 <td >:</td>
                                 <td >{this.state.WhichTime}</td>
                             </tr>
                             <tr>
-                                <td >CreatedTime</td>
+                                <td >Created Time</td>
                                 <td >:</td>
                                 <td >{this.state.CreatedTime}</td>
                             </tr>
@@ -197,17 +199,17 @@ class ViewMeeting extends Component {
                                         placeholder="Enter Objective" name="Objective" value={this.state.Objective}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="Link">Link:</label>
+                                        <label htmlFor="Link">Meeting Link:</label>
                                         <input className="form-control" id="Link" type="text" onChange={this.changeHandler}
                                         placeholder="Enter Link" name="Link" value={this.state.Link}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="WhichDate">WhichDate:</label>
+                                        <label htmlFor="WhichDate">Meeting Date:</label>
                                         <input className="form-control" id="WhichDate" type="text" onChange={this.changeHandler}
                                         placeholder="Enter WhichDate" name="WhichDate" value={this.state.WhichDate}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="WhichTime">WhichTime:</label>
+                                        <label htmlFor="WhichTime">Meeting Time:</label>
                                         <input className="form-control" id="WhichTime" type="text" onChange={this.changeHandler}
                                         placeholder="Enter WhichTime" name="WhichTime" value={this.state.WhichTime}/>
                                     </div>

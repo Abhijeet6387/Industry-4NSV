@@ -8,14 +8,45 @@ const jwt= require('jsonwebtoken');
 
 
 // get all
-router.get("/get",checkauth,function(req,res){
+router.get("/getpast",checkauth,function(req,res){
 
     const token=req.headers.authorization.split(" ")[1];
     const decoded= jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
     if(userrole=='admin'){
-    employee.find({},function(err,employee){
+    employee.find({isOld:'true'},function(err,employee){
+        if(err)
+        {
+            console.log("error");
+        }
+        else{
+            var total= 0.0;
+            for (i = 0; i < employee.length; i++) {
+                var obj= employee[i];
+                total += obj.salary;
+              }
+              console.log(total);
+            //  res.json(softwareMes) 
+            res.status(200).json({message:"Success",total:total,employee:employee})
+        }
+    })
+   }
+   else{
+    console.log("Unauthorized")
+    res.status(403).json({message:"Unauthorized"})
+  }
+})
+
+// get all
+router.get("/getcurrent",checkauth,function(req,res){
+
+    const token=req.headers.authorization.split(" ")[1];
+    const decoded= jwt.verify(token,"secret");
+    req.userData =decoded;
+    const userrole= req.userData.role;
+    if(userrole=='admin'){
+    employee.find({isOld:'false'},function(err,employee){
         if(err)
         {
             console.log("error");

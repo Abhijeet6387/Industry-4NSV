@@ -19,7 +19,7 @@ const Employee= props =>(
         </th>
     </tr>
 )
-class ListEmployee extends Component {
+class ListNewEmployee extends Component {
     constructor(props){
         super(props);
         this.state={ employee : [],Total:0};
@@ -28,7 +28,7 @@ class ListEmployee extends Component {
     }
     componentDidMount(){
         const token= localStorage.getItem("Nsvtoken");
-        axios.get('/employee/getpast',{headers : { 
+        axios.get('/employee/getcurrent',{headers : { 
             'Authorization' :"Bearer "+token}})
         .then(response => {
             // alert("success")
@@ -62,7 +62,7 @@ class ListEmployee extends Component {
                 <div className="container pl-2">
                     <div className="container">
                         <div className="container">
-                           <h3 className="pb-2 pr-2"><b>Past Employee List | Total (in Rupees): {this.state.Total}</b>
+                           <h3 className="pb-2 pr-2"><b>Present Employee List | Total (in Rupees): {this.state.Total}</b>
                            <Link to='/addEmployee'><i className="fa fa-plus" style={{color:"#000", fontSize:"24px", float: "right", marginLeft: "-50%"}}></i></Link></h3>
                         </div>
                     </div>
@@ -93,4 +93,4 @@ class ListEmployee extends Component {
     }
 }
 
-export default ListEmployee;
+export default ListNewEmployee;

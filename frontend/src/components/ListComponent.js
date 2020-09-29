@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 const MyComponent= props =>(
     <tr>
         <th>{props.sn}</th>
@@ -51,7 +51,7 @@ class ListComponent extends Component {
               
             }).catch(
                 (err)=> {console.log(err)
-                  alert("Something Went Wrong")
+                 alert("Unauthorize or slow internet")
                   window.location.reload();
             });
         }

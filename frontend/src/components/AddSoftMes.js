@@ -35,7 +35,7 @@ class AddSoftMes extends Component {
           
         }).catch(
             (err)=> {console.log(err)
-              alert("Something Went Wrong")
+              alert("Unauthorize or slow internet")
               this.props.history.push('/');
               window.location.reload();
           });

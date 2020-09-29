@@ -7,9 +7,9 @@ class NavbarTwo extends Component {
                 <nav className="navbar navbar-expand-lg navbar-dark " style={{backgroundColor: "#A93434"}}><button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"><span className="navbar-toggler-icon"></span></button>
                     <div className="collapse navbar-collapse" id="main_nav">
                     <ul className="navbar-nav">
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown pl-2 pr-2">
                             <a className="nav-link dropdown-toggle" href="https://industry-4nsv.herokuapp.com/" data-toggle="dropdown" style={{color: "#f5dede"}}>
-                                <span className="fa fa-home fa-lg pl-2 pr-2"></span><b>Home</b>
+                               <b>Home</b>
                             </a>
                             <ul className="dropdown-menu">
                                 <li>
@@ -19,7 +19,7 @@ class NavbarTwo extends Component {
                                 </li>
                             </ul>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown pl-2 pr-2">
                             <a className="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" style={{color: "#f5dede"}}><b>MES</b></a>
                             <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" to='/component'> Component info</Link></li>
@@ -45,7 +45,7 @@ class NavbarTwo extends Component {
                                 </li>
                             </ul>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown pl-2 pr-2">
                             <a className="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" style={{color: "#f5dede"}}> <b>Establishment  </b></a>
                             <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="#"> Recruitment/ Selection </a></li>
@@ -56,38 +56,52 @@ class NavbarTwo extends Component {
                                 <li><a className="dropdown-item" href="#"> Job Rotation</a></li>
                             </ul>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown pl-2 pr-2">
                             <a className="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" style={{color: "#f5dede"}}><b>Status &amp; Updates</b></a>
                             <ul className="dropdown-menu">
                                 <li>
-                                    <Link className="dropdown-item" to="/update">Overall Progress</Link>
+                                    {/* <Link className="dropdown-item" to="/update">Overall Progress</Link>
                                     <Link className="dropdown-item" to="/addUpdate">Update</Link>
                                     <Link className="dropdown-item" to="/addMeeting">Discussion Board</Link>
-                                    <Link className="dropdown-item" to="/meeting">Minutes of Meetings</Link>
+                                    <Link className="dropdown-item" to="/meeting">Minutes of Meetings</Link> */}
+                                    <Link className="dropdown-item" to="/update">See Updates</Link>
+                                    <Link className="dropdown-item" to="/addUpdate">Add Update</Link>
+                                    <Link className="dropdown-item" to="/addMeeting">Create Meeting</Link>
+                                    <Link className="dropdown-item" to="/meeting">See Meetings</Link>
                                 </li>
                             </ul>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown pl-2 pr-2">
                             <a className="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" style={{color: "#f5dede"}}><b>RuTAG Link</b></a>
                             <ul className="dropdown-menu">
                                 <li>
-                                    <Link className="dropdown-item" to="/update">Overall Progress</Link>
+                                    {/* <Link className="dropdown-item" to="/update">Overall Progress</Link>
                                     <Link className="dropdown-item" to="/addUpdate">Update</Link>
                                     <Link className="dropdown-item" to="/addMeeting">Discussion Board</Link>
-                                    <Link className="dropdown-item" to="/meeting">Minutes of Meetings</Link>
+                                    <Link className="dropdown-item" to="/meeting">Minutes of Meetings</Link> */}
+                                    <Link className="dropdown-item" to="/updateRUTAG">See Updates</Link>
+                                    <Link className="dropdown-item" to="/addUpdateRUTAG">Add Update</Link>
+                                    <Link className="dropdown-item" to="/addMeetingRUTAG">Create Meeting</Link>
+                                    <Link className="dropdown-item" to="/meetingRUTAG">See Meetings</Link>
                                 </li>
                             </ul>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown pl-2 pr-2">
                             <a className="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" style={{color: "#f5dede"}}><b>Finance &amp; Accounts</b></a>
 
                             <ul className="dropdown-menu">
-                                <li> <Link className="dropdown-item" to="/softwareDesign">Software Design</Link></li>  
-                                <li> <Link className="dropdown-item" to="/softwareMes">Software MES</Link></li>
-                                <li><Link className="dropdown-item" to="/hardwareDesign">Hardware Design</Link></li> 
-                                <li><Link className="dropdown-item" to="/hardwareMes">Hardware MES</Link></li>
-                                <li><Link className="dropdown-item" to="/employee">Employee</Link></li>
-                                <li><Link className="dropdown-item" to="/budget">Budget</Link></li>
+                                <li> <Link className="dropdown-item" to="/softwareDesign">Software Design Details</Link></li>  
+                                <li> <Link className="dropdown-item" to="/softwareMes">Software MES Details</Link></li>
+                                <li><Link className="dropdown-item" to="/hardwareDesign">Hardware Design Details</Link></li> 
+                                <li><Link className="dropdown-item" to="/hardwareMes">Hardware MES Details</Link></li>
+                                <li><Link className="dropdown-item" to="/budget">Budget Details</Link></li>
+                                <li><a className="dropdown-item" href="#" > Employee Details </a>
+                                <ul className="submenu dropdown-menu">
+                           
+                                    <li><Link className="dropdown-item" to="/pastEmployee">Past Employees</Link></li>
+                                    <li><Link className="dropdown-item" to="/presentEmployee">Present Employees</Link></li>
+                                </ul>
+                                </li>
                                 <li>
                                 {/* <a className="dropdown-item" href="#" target="_blank">Budget &amp; Heads</a>
                                 <a className="dropdown-item" href="#" target="_blank">Utilization</a>

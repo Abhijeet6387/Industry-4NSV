@@ -51,7 +51,7 @@ class ViewHardwareDesign extends Component {
                }
             })
             .catch(function (error) {
-                alert("something went wrong")
+                alert("Unauthorize or slow internet")
     
                 console.log(error);
             })  
@@ -82,7 +82,7 @@ class ViewHardwareDesign extends Component {
               
             }).catch(
                 (err)=> {console.log(err)
-                  alert("Something Went Wrong")
+                    alert("Unauthorize or slow internet")
                   window.location.reload();
               });
         }
@@ -106,7 +106,7 @@ class ViewHardwareDesign extends Component {
     
             ).catch(
                 (err)=> {console.log(err)
-                    alert("Something Went Wrong")
+                    alert("Unauthorize or slow internet")
                     
                     window.location.reload();
                 }   

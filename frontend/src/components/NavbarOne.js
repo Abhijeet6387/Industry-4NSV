@@ -30,9 +30,12 @@ class NavbarOne extends Component {
 
         axios.post('/member/login', oldUser)
         .then(res =>{
+            alert(res.data.message)
+           if(res.data.message==='success'){
+             localStorage.setItem('Nsvtoken',res.data.token);
+           }
         
-        localStorage.setItem('Nsvtoken',res.data.token);
-        alert(res.data.message)
+        
         window.location.reload();
         })
         .catch(err=> {
@@ -66,7 +69,7 @@ class NavbarOne extends Component {
                     <a className="navbar-brand mr-auto" href="#" style={{color: "#cd5c5c",fontSize:"30px"}}>
                         <img className="img-fluid" src={indianrail1} width="50" height="50"/>
                         <img className="img-fluid" src={amblem} width="50" height="50"/>
-                        <img className="img-fluid pr-1" src={iitk} width="50" height="50"/>
+                        <img className="img-fluid pr-2" src={iitk} width="50" height="50"/>
                         <b style={{textShadow: "2px 2px #e6adad"}}>INDUSTRY-4NSV</b>
                     </a>
                     <button

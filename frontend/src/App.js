@@ -41,9 +41,18 @@ import AddMeeting from './components/AddMeeting';
 import ListUpdate from './components/ListUpdate';
 import ViewUpdate from './components/ViewUpdate';
 import AddUpdate from './components/AddUpdate';
+
+import ListMeetingRUTAG from './components/ListMeetingRUTAG';
+import ViewMeetingRUTAG from './components/ViewMeetingRUTAG';
+import AddMeetingRUTAG from './components/AddMeetingRUTAG';
+import ListUpdateRUTAG from './components/ListUpdateRUTAG';
+import ViewUpdateRUTAG from './components/ViewUpdateRUTAG';
+import AddUpdateRUTAG from './components/AddUpdateRUTAG';
+
 import ListComponent from './components/ListComponent';
 import ViewComponent from './components/ViewComponent';
 import AddComponent from './components/AddComponent';
+import ListNewEmployee from './components/ListNewEmployee';
 
 
 function App() {
@@ -57,7 +66,7 @@ function App() {
       
         <Switch>
           <Route path="/" exact component={StatsIntroduction}/>
-          <Route path="/about"  component={StatsAbout}/>
+          <Route path="/about#about"  component={StatsAbout}/>
           <Route path="/contact" component={StatsContact}/>
           <Route path="/description" component={StatsDescription}/>
           <Route path="/dashboard" component={StatsDashboard}/>
@@ -87,7 +96,8 @@ function App() {
           <Route path="/addBudget" component={AddBudget}/>
           
           
-          <Route path="/employee" component={ListEmployee}/>
+          <Route path="/pastEmployee" component={ListEmployee}/>
+          <Route path="/presentEmployee" component={ListNewEmployee}/>
           <Route path="/viewEmployee/:id" component={ViewEmployee}/>
           <Route path="/addEmployee" component={AddEmployee}/>
 
@@ -98,6 +108,14 @@ function App() {
           <Route path="/meeting" component={ListMeeting}/>
           <Route path="/viewMeeting/:id" component={ViewMeeting}/>
           <Route path="/addMeeting" component={AddMeeting}/>
+
+          <Route path="/updateRUTAG" component={ListUpdateRUTAG}/>
+          <Route path="/viewUpdateRUTAG/:id" component={ViewUpdateRUTAG}/>
+          <Route path="/addUpdateRUTAG" component={AddUpdateRUTAG}/>
+
+          <Route path="/meetingRUTAG" component={ListMeetingRUTAG}/>
+          <Route path="/viewMeetingRUTAG/:id" component={ViewMeetingRUTAG}/>
+          <Route path="/addMeetingRUTAG" component={AddMeetingRUTAG}/>
 
           <Route path="/component" component={ListComponent}/>
           <Route path="/viewComponent/:id" component={ViewComponent}/>

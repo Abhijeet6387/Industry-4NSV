@@ -48,7 +48,7 @@ class ListHardDesign extends Component {
         })
         .catch(function (error) {
             console.log(error);
-            alert("something went wrong")
+            alert("Unauthorize or slow internet")
 
         })  
     }

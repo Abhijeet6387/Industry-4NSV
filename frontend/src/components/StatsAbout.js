@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class StatsAbout extends Component {
     render() {
         return (
-        <div className="bg-light">
+        <div id="about" className="bg-light">
             <div className="container pt-4 pb-4" id="abt" style={{backgroundColor: "#ffffff"}}>
                 <div className="container"></div>
                 <div className="container">

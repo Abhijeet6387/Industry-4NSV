@@ -10,6 +10,7 @@ const employeeSchema = new Schema({
        from:{type:String,required:true},
        to:{type:String,required:true},
        salary:{type:Number,default:0},
+       isOld:{type:String,required:true},
        projectNo:{type:String,required:true}
 
 });
