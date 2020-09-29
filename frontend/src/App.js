@@ -66,7 +66,7 @@ function App() {
       
         <Switch>
           <Route path="/" exact component={StatsIntroduction}/>
-          <Route path="/about#about"  component={StatsAbout}/>
+          <Route path="/about"  component={StatsAbout}/>
           <Route path="/contact" component={StatsContact}/>
           <Route path="/description" component={StatsDescription}/>
           <Route path="/dashboard" component={StatsDashboard}/>
