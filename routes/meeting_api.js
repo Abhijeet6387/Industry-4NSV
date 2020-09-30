@@ -15,7 +15,7 @@ router.get("/get",checkauth,function(req,res){
     const decoded= jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK' || userrole=='MCF'){
+    if(userrole=='IITK' || userrole=='MCF' || userrole=='admin'){
     meeting.find({},function(err,meeting){
         if(err)
         {
@@ -40,7 +40,7 @@ router.post("/add",checkauth,function(req,res){
     req.userData =decoded;
     const userrole= req.userData.role;
 
-   if(userrole=='IITK' || userrole=='MCF'){
+   if(userrole=='IITK' || userrole=='MCF' || userrole=='admin'){
     const nw_meeting = {
         Title:req.body.Title,
         Objective:req.body.Objective,
