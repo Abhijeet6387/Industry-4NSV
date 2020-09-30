@@ -16,7 +16,7 @@ router.get("/get",checkauth,function(req,res){
     const decoded= jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK' || userrole=='MCF'){
+    if(userrole=='IITK' || userrole=='MCF'||userrole=='admin'){
     update.find({},function(err,update){
         if(err)
         {
@@ -40,7 +40,7 @@ router.post("/add",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-   if(userrole=='IITK' || userrole=='MCF'){
+   if(userrole=='IITK' || userrole=='MCF' ||userrole=='admin'){
     const nw_update = {
         Title:req.body.Title,
         Summary:req.body.Summary,
@@ -72,7 +72,7 @@ router.get("/details/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK' || userrole=='MCF'){
+    if(userrole=='IITK' || userrole=='MCF' ||userrole=='admin'){
     update.findById(req.params.id,function(err,foundupdate){
         if(err)
         {
@@ -97,7 +97,7 @@ router.post("/update/:id",checkauth,function(req,res){
     const userrole= req.userData.role;
     console.log(req.userData.email)
     console.log(req.body.By)
-    if((userrole=='IITK' || userrole=='MCF') && req.body.By == req.userData.email){  
+    if((userrole=='IITK' || userrole=='MCF' || userrole=='admin') && req.body.By == req.userData.email){  
     update.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
             console.log(err);
@@ -119,7 +119,7 @@ router.delete("/delete/:id",checkauth,function(req,res){
     const userrole= req.userData.role;
     console.log(req.headers.data)
     console.log(req.userData.email)
-    if((userrole=='IITK' || userrole=='MCF') && req.headers.data==req.userData.email){
+    if((userrole=='IITK' || userrole=='MCF' || userrole=='admin') && req.headers.data==req.userData.email){
     update.findByIdAndRemove(req.params.id,function(err,deleteupdate){
         if(err){
             console.log("err is "+err);
@@ -140,7 +140,7 @@ router.get("/getRUTAG",checkauth,function(req,res){
     const decoded= jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK'){
+    if(userrole=='IITK' || userrole=='admin'){
     rupdate.find({},function(err,update){
         if(err)
         {
@@ -164,7 +164,7 @@ router.post("/addRUTAG",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-   if(userrole=='IITK'){
+   if(userrole=='IITK'|| userrole=='admin'){
     const nw_update = {
         Title:req.body.Title,
         Summary:req.body.Summary,
@@ -196,7 +196,7 @@ router.get("/detailsRUTAG/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK'){
+    if(userrole=='IITK'|| userrole=='admin'){
     rupdate.findById(req.params.id,function(err,foundupdate){
         if(err)
         {
@@ -219,7 +219,7 @@ router.post("/updateRUTAG/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK' && req.body.By == req.userData.email){  
+    if((userrole=='IITK'|| userrole=='admin') && req.body.By == req.userData.email){  
     rupdate.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
             console.log(err);
@@ -239,7 +239,7 @@ router.delete("/deleteRUTAG/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK' && req.headers.data==req.userData.email){
+    if((userrole=='IITK'|| userrole=='admin') && req.headers.data==req.userData.email){
     rupdate.findByIdAndRemove(req.params.id,function(err,deleteupdate){
         if(err){
             console.log("err is "+err);

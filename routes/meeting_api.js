@@ -75,7 +75,7 @@ router.get("/details/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK' || userrole=='MCF'){
+    if(userrole=='IITK' || userrole=='MCF' || userrole=='admin'){
     meeting.findById(req.params.id,function(err,foundmeeting){
         if(err)
         {
@@ -98,7 +98,7 @@ router.post("/update/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if((userrole=='IITK' || userrole=='MCF')&&req.body.By == req.userData.email){  
+    if((userrole=='IITK' || userrole=='MCF' || userrole=='admin')&&req.body.By == req.userData.email){  
     meeting.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
             console.log(err);
@@ -118,7 +118,7 @@ router.delete("/delete/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if((userrole=='IITK' || userrole=='MCF') && req.headers.data==req.userData.email){
+    if((userrole=='IITK' || userrole=='MCF' || userrole=='admin') && req.headers.data==req.userData.email){
     meeting.findByIdAndRemove(req.params.id,function(err,deletemeeting){
         if(err){
             console.log("err is "+err);
@@ -139,7 +139,7 @@ router.get("/getRUTAG",checkauth,function(req,res){
     const decoded= jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK'){
+    if(userrole=='IITK' || userrole=='admin'){
     rmeeting.find({},function(err,meeting){
         if(err)
         {
@@ -164,7 +164,7 @@ router.post("/addRUTAG",checkauth,function(req,res){
     req.userData =decoded;
     const userrole= req.userData.role;
 
-   if(userrole=='IITK'){
+   if(userrole=='IITK' || userrole=='admin'){
     const nw_meeting = {
         Title:req.body.Title,
         Objective:req.body.Objective,
@@ -199,7 +199,7 @@ router.get("/detailsRUTAG/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK'){
+    if(userrole=='IITK' || userrole=='admin'){
     rmeeting.findById(req.params.id,function(err,foundmeeting){
         if(err)
         {
@@ -222,7 +222,7 @@ router.post("/updateRUTAG/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK' && req.body.By == req.userData.email){  
+    if((userrole=='IITK' || userrole=='admin') && req.body.By == req.userData.email){  
     rmeeting.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
             console.log(err);
@@ -242,7 +242,7 @@ router.delete("/deleteRUTAG/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='IITK' && req.headers.data==req.userData.email){
+    if((userrole=='IITK' || userrole=='admin') && req.headers.data==req.userData.email){
     rmeeting.findByIdAndRemove(req.params.id,function(err,deletemeeting){
         if(err){
             console.log("err is "+err);

@@ -14,7 +14,7 @@ router.get("/get",checkauth,function(req,res){
     const decoded= jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='admin'){
+    if(userrole=='MCF' || userrole=='admin'){
     Component.find({ Listname: req.query.Listname, Level: req.query.Level, Item: req.query.Item},function(err,component){
         if(err)
         {
@@ -38,7 +38,7 @@ router.post("/add",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-   if(userrole=='admin'){
+   if(userrole=='MCF' || userrole=='admin'){
 
    Component.create(req.body,function(err,newlyCreatedcomponent){
         if (err){
@@ -63,7 +63,7 @@ router.get("/details/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='admin'){
+    if(userrole=='MCF' || userrole=='admin'){
     Component.findById(req.params.id,function(err,foundcomponent){
         if(err)
         {
@@ -86,7 +86,7 @@ router.post("/update/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='admin'){  
+    if(userrole=='MCF' || userrole=='admin'){  
     Component.findByIdAndUpdate(req.params.id,req.body,function(err){
         if(err){
             console.log(err);
@@ -106,7 +106,7 @@ router.delete("/delete/:id",checkauth,function(req,res){
     const decoded=jwt.verify(token,"secret");
     req.userData =decoded;
     const userrole= req.userData.role;
-    if(userrole=='admin'){
+    if(userrole=='MCF' || userrole=='admin'){
     Component.findByIdAndRemove(req.params.id,function(err,deletecomponent){
         if(err){
             console.log("err is "+err);

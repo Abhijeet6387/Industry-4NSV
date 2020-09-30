@@ -61,20 +61,21 @@ class RequestAccess extends Component {
                                 width: "50%"}}>
                                 <form onSubmit={this.onSubmit}>
                                     <div className="form-group">
+                                        <label htmlFor="name">Name:</label>
+                                        <input className="form-control" id="name" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter name" name="name" value={this.state.name}/>
+                                    </div>
+                                    <div className="form-group">
                                         <label htmlFor="email">Email:</label>
                                         <input className="form-control" id="email" type="text" onChange={this.changeHandler}
                                         placeholder="Enter email" name="email" value={this.state.email}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="password">Password:</label>
-                                        <input className="form-control" id="password" type="password" onChange={this.changeHandler}
+                                        <input className="form-control" id="password" type="text" onChange={this.changeHandler}
                                         placeholder="Enter password" name="password" value={this.state.password}/>
                                     </div>
-                                    <div className="form-group">
-                                        <label htmlFor="name">Name:</label>
-                                        <input className="form-control" id="name" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter name" name="name" value={this.state.name}/>
-                                    </div>
+
                                     <div className="form-group">
                                         <label htmlFor="role">Role:</label>
                                         <input className="form-control" id="role" type="text" onChange={this.changeHandler}
