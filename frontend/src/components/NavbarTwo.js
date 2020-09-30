@@ -112,6 +112,15 @@ class NavbarTwo extends Component {
                                 </li>
                             </ul>
                         </li>
+                        <li className="nav-item dropdown pl-2 pr-2">
+                            <a className="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" style={{color: "#f5dede"}}><b>Access Request</b></a>
+                            <ul className="dropdown-menu">
+                                <li>
+                                    <Link className="dropdown-item" to="/makeRequest">Access Request Form</Link>
+                                    <Link className="dropdown-item" to="/seeRequests">Access Request List</Link>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     </div>
                 </nav>

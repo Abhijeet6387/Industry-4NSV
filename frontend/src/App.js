@@ -53,6 +53,8 @@ import ListComponent from './components/ListComponent';
 import ViewComponent from './components/ViewComponent';
 import AddComponent from './components/AddComponent';
 import ListNewEmployee from './components/ListNewEmployee';
+import RequestList from './components/RequestList';
+import RequestAccess from './components/RequestAccess';
 
 
 function App() {
@@ -120,6 +122,10 @@ function App() {
           <Route path="/component" component={ListComponent}/>
           <Route path="/viewComponent/:id" component={ViewComponent}/>
           <Route path="/addComponent" component={AddComponent}/>
+          
+          <Route path="/seeRequests" component={RequestList}/>
+          <Route path="/makeRequest" component={RequestAccess}/>
+
 
 
          

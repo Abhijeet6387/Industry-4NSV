@@ -15,6 +15,7 @@ const budget_api = require("./routes/budget_api");
 const employee_api = require("./routes/employee_api");
 const meeting_api = require("./routes/meeting_api");
 const update_api = require("./routes/update_api");
+const access_api = require("./routes/access_api");
 const Admin_router=require('./routes/admin_api');
 
 
@@ -37,6 +38,7 @@ app.use('/public', express.static(__dirname + '/public'));
 
 ///. API's connections
 app.use('/event',event_api);
+app.use('/access',access_api);
 app.use('/member',member_api);
 app.use('/component',component_api);
 app.use('/hardwareDesign',hardware_design_api);
