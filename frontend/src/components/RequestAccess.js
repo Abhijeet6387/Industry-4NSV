@@ -10,7 +10,7 @@ class RequestAccess extends Component {
             email:'',
             password:'',
             name:'',
-            role:'',
+            role:'admin',
         }
         this.changeHandler = this.changeHandler.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -76,10 +76,19 @@ class RequestAccess extends Component {
                                         placeholder="Enter password" name="password" value={this.state.password}/>
                                     </div>
 
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <label htmlFor="role">Role:</label>
                                         <input className="form-control" id="role" type="text" onChange={this.changeHandler}
                                         placeholder="Enter role" name="role" value={this.state.role}/>
+                                    </div> */}
+                                    <div class="form-group">
+                                        <label htmlFor="role">Select Role:</label>
+                                        <select class="form-control" id="role" name="role" onChange={this.changeHandler} value={this.state.role}>
+                                            <option value ="admin">ADMIN</option>
+                                            <option value ="MCF">MCF</option>
+                                            <option value ="IITK">IITK</option>
+    
+                                        </select>
                                     </div>
                                     <button className="block" type="submit" style={{ display: "block",
                                     width: "100%",border: "none", backgroundColor:"#cd5c5c",padding: "14px 28px",    

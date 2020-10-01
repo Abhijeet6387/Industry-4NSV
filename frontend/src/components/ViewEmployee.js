@@ -127,15 +127,16 @@ class ViewEmployee extends Component {
                                 <td >{this.state.id}</td>
                             </tr>
                             <tr>
-                                <td >Email</td>
-                                <td >:</td>
-                                <td >{this.state.email}</td>
-                            </tr>
-                            <tr>
                                 <td >Name</td>
                                 <td>:</td>
                                 <td>{this.state.name}</td>
                             </tr>
+                            <tr>
+                                <td >Email</td>
+                                <td >:</td>
+                                <td >{this.state.email}</td>
+                            </tr>
+
                             <tr>
                                 <td >Post</td>
                                 <td >:</td>
@@ -162,7 +163,7 @@ class ViewEmployee extends Component {
                                 <td >{this.state.projectNo}</td>
                             </tr>
                             <tr>
-                                <td >Past Employee</td>
+                                <td >Ex-Employee</td>
                                 <td >:</td>
                                 <td >{this.state.isOld}</td>
                             </tr>
@@ -188,15 +189,16 @@ class ViewEmployee extends Component {
                                 <div className="modal-body">
                                 <form onSubmit={this.onSubmit}>
                                     <div className="form-group">
-                                        <label htmlFor="email">Email:</label>
-                                        <input className="form-control" id="email" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter email" name="email" value={this.state.email}/>
-                                    </div>
-                                    <div className="form-group">
                                         <label htmlFor="name">Name:</label>
                                         <input className="form-control" id="name" type="text" onChange={this.changeHandler}
                                         placeholder="Enter name" name="name" value={this.state.name}/>
                                     </div>
+                                    <div className="form-group">
+                                        <label htmlFor="email">Email:</label>
+                                        <input className="form-control" id="email" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter email" name="email" value={this.state.email}/>
+                                    </div>
+
                                     <div className="form-group">
                                         <label htmlFor="post">Post:</label>
                                         <input className="form-control" id="post" type="text" onChange={this.changeHandler}
@@ -222,10 +224,12 @@ class ViewEmployee extends Component {
                                         <input className="form-control" id="projectNo" type="text" onChange={this.changeHandler}
                                         placeholder="Enter projectNo" name="projectNo" value={this.state.projectNo}/>
                                     </div>
-                                    <div className="form-group">
-                                        <label htmlFor="isOld">Past employee:</label>
-                                        <input className="form-control" id="isOld" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter true or false" name="isOld" value={this.state.isOld}/>
+                                    <div class="form-group">
+                                        <label htmlFor="isOld">Ex-employee:</label>
+                                        <select class="form-control" id="isOld" name="isOld" onChange={this.changeHandler} value={this.state.isOld}>
+                                           <option value ="true">Yes</option>
+                                           <option value ="false">No</option>
+                                        </select>
                                     </div>
                                     <button className="block" type="submit" style={{ display: "block",
                                     width: "100%",border: "none", backgroundColor:"#cd5c5c",padding: "14px 28px",    

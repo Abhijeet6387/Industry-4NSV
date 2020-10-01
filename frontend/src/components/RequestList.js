@@ -114,8 +114,9 @@ class RequestList extends Component {
                                 <tr>
                                     <th scope="col">S.No</th>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Email</th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    
                                     <th scope="col">Role</th>
                                     <th scope="col">Allow</th>
                                     <th scope="col">Dicard</th>
@@ -126,8 +127,9 @@ class RequestList extends Component {
                                 <tr key={i}>
                                     <th >{i+1}</th>
                                     <th >{item._id}</th>
-                                    <th >{item.email}</th>
                                     <th >{item.name}</th>
+                                    <th >{item.email}</th>
+                                    
                                     <th >{item.role}</th>
                                     <th > <button onClick={()=>this.allow(item._id)} type="button" className="btn btn-success">Allow</button></th>
                                     <th > <button onClick={()=>this.discard(item._id)} type="button" className="btn btn-danger">Discard</button></th>

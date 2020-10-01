@@ -5,8 +5,9 @@ const Employee= props =>(
 
     <tr>
         <th>{props.sn}</th>
-        <th >{props.employee.email}</th>
         <th >{props.employee.name}</th>
+        <th >{props.employee.email}</th>
+        
         <th >{props.employee.post}</th>
         <th >{props.employee.from}</th>
         <th >{props.employee.to}</th>
@@ -62,7 +63,7 @@ class ListEmployee extends Component {
                 <div className="container pl-2">
                     <div className="container">
                         <div className="container">
-                           <h3 className="pb-2 pr-2"><b>Past Employee List | Total (in Rupees): {this.state.Total}</b>
+                           <h3 className="pb-2 pr-2"><b>EX- Employee List | Total (in Rupees): {this.state.Total}</b>
                            <Link to='/addEmployee'><i className="fa fa-plus" style={{color:"#000", fontSize:"24px", float: "right", marginLeft: "-50%"}}></i></Link></h3>
                         </div>
                     </div>
@@ -71,8 +72,9 @@ class ListEmployee extends Component {
                             <thead style={{backgroundColor: "#A93434", color: "#f0f0f0"}}>
                                 <tr>
                                     <th scope="col">S.No</th>
-                                    <th scope="col">Email</th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    
                                     <th scope="col">Post</th>
                                     <th scope="col">From</th>
                                     <th scope="col">To</th>
