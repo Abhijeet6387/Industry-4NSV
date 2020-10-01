@@ -94,7 +94,7 @@ class ViewEmployee extends Component {
                 res =>{
     
                     alert(res.data.message)
-                    this.props.history.push('/employee');
+                    this.props.history.push('/');
                     window.location.reload();
                      
                 }

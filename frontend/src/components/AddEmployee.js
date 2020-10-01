@@ -37,7 +37,7 @@ class AddEmployee extends Component {
             'Authorization' :"Bearer "+token}})
         .then(res =>{
          alert(res.data.message)
-         if(this.state.isOld===true)
+         if(this.state.isOld==='true')
          this.props.history.push('/pastEmployee');
          else
          this.props.history.push('/presentEmployee');
