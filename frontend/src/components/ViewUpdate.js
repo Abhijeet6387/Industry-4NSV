@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Moment from 'moment';
 class ViewUpdate extends Component {
     constructor(props){
         super(props);
@@ -31,7 +32,7 @@ class ViewUpdate extends Component {
                     By: response.data.item.By,
                     For: response.data.item.For,
                     Link: response.data.item.Link,
-                    Time: response.data.item.Time
+                    Time: Moment(response.data.item.Time).format('YYYY-MM-DD')
                    
                 });
                }
@@ -146,7 +147,7 @@ class ViewUpdate extends Component {
                                 <td >{this.state.Link}</td>
                             </tr>
                             <tr>
-                                <td >Time</td>
+                                <td >Date</td>
                                 <td >:</td>
                                 <td >{this.state.Time}</td>
                             </tr>
@@ -157,7 +158,7 @@ class ViewUpdate extends Component {
                         marginRight: "auto",
                         width: "25%"}}>
     
-                          <button  type="button" className="btn btn-warning ml-2 mr-2" data-toggle="modal" data-target="#myModal">Edit This</button> 
+                          <button  type="button" className="btn btn-warning ml-2 mr-2" data-toggle="modal" data-target="#myModal">Edit</button> 
                           <div className="modal" id="myModal">
                             <div className="modal-dialog">
                               <div className="modal-content">
@@ -198,7 +199,7 @@ class ViewUpdate extends Component {
                                 </div>
                             </div> 
                          </div>  
-                         <button  type="button" className="btn btn-danger ml-2 mr-2"  data-toggle="modal" data-target="#deletemodal">Delete This</button> 
+                         <button  type="button" className="btn btn-danger ml-2 mr-2"  data-toggle="modal" data-target="#deletemodal">Delete</button> 
                          <div className="modal fade" id="deletemodal" role="dialog">
                             <div className="modal-dialog modal-lg" role="content">
                                 <div className="modal-content">

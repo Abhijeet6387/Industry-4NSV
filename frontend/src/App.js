@@ -55,6 +55,9 @@ import AddComponent from './components/AddComponent';
 import ListNewEmployee from './components/ListNewEmployee';
 import RequestList from './components/RequestList';
 import RequestAccess from './components/RequestAccess';
+import ListEmployeeNw from './components/ListEmployeeNw';
+import AddEmployeeNw from './components/AddEmployeeNw';
+import ListExEmployee from './components/ListExEmployee';
 
 
 function App() {
@@ -101,7 +104,7 @@ function App() {
           <Route path="/pastEmployee" component={ListEmployee}/>
           <Route path="/presentEmployee" component={ListNewEmployee}/>
           <Route path="/viewEmployee/:id" component={ViewEmployee}/>
-          <Route path="/addEmployee" component={AddEmployee}/>
+          {/* <Route path="/addEmployee" component={AddEmployee}/> */}
 
           <Route path="/update" component={ListUpdate}/>
           <Route path="/viewUpdate/:id" component={ViewUpdate}/>
@@ -126,10 +129,10 @@ function App() {
           <Route path="/seeRequests" component={RequestList}/>
           <Route path="/makeRequest" component={RequestAccess}/>
 
-
-
-         
-
+          <Route path="/currentEmployee" component={ListEmployeeNw}/>
+          <Route path="/exEmployee" component={ListExEmployee}/>
+          <Route path="/addEmployee" component={AddEmployeeNw}/>
+          
         </Switch>
         <Footer></Footer>
       </Router>

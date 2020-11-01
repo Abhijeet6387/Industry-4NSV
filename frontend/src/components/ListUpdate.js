@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Moment from 'moment';
 const Update= props =>(
     <div className="card mt-2">
       {/* <div className="card-header">
@@ -9,7 +10,7 @@ const Update= props =>(
       <div className="card-body" >
     
       <h6>{props.sn}. {props.update.Title} -{props.update.By}</h6>
-      <p align="right">{props.update.Time}</p>
+      <p align="right">{Moment(props.update.Time).format('YYYY-MM-DD')}</p>
       
        {/* <p className="text-muted ml-auto">-{props.update.By}</p> */}
         <hr></hr>

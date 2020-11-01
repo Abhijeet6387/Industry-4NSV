@@ -12,7 +12,7 @@ const hardware_MES_api = require("./routes/hardware_MES_api");
 const software_design_api=require("./routes/software_design_api");
 const software_MES_api = require("./routes/software_MES_api");
 const budget_api = require("./routes/budget_api");
-const employee_api = require("./routes/employee_api");
+const employee_api = require("./routes/new_employee_api");
 const meeting_api = require("./routes/meeting_api");
 const update_api = require("./routes/update_api");
 const access_api = require("./routes/access_api");
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json()); 
 
-app.use('/public', express.static(__dirname + '/public'));
+// app.use('/public', express.static(__dirname + '/public'));
 
 
 
@@ -46,10 +46,11 @@ app.use('/hardwareMES',hardware_MES_api);
 app.use('/softwareDesign',software_design_api);
 app.use('/softwareMES',software_MES_api);
 app.use('/budget',budget_api);
+// app.use('/employee',employee_api);
 app.use('/employee',employee_api);
 app.use('/meeting',meeting_api);
 app.use('/update',update_api);
-app.use(express.static(path.join(__dirname,  'frontend','build')));
+
 
 ///// static rendering starts here ....
 
@@ -63,23 +64,14 @@ app.get("/StaticPageName",function(req,res){
 
 
 
-
-
-
 ////react part
-app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname,  'frontend','build','index.html'));
-});
 
-
-
-
-
-
-
-
-
-
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static(path.join(__dirname,  'frontend','build')));
+    app.get("*", (req, res) => {
+          res.sendFile(path.join(__dirname,  'frontend','build','index.html'));
+    });
+}
 
 
 

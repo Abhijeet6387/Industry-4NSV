@@ -4,12 +4,12 @@ import axios from 'axios';
 
 const SoftwareDesign= props =>(
     <tr>
-        <th>{props.sn}</th>
-        <th >{props.softwareDesign.Manufacturer}</th>
-        <th >{props.softwareDesign.Softwares}</th>
-        <th >{props.softwareDesign.Quantity}</th>
-        <th >{props.softwareDesign.price}</th>
-        <th >{props.softwareDesign.Status}</th>
+        <td>{props.sn}</td>
+        <td >{props.softwareDesign.Manufacturer}</td>
+        <td >{props.softwareDesign.Softwares}</td>
+        <td >{props.softwareDesign.Quantity}</td>
+        <td >{props.softwareDesign.price}</td>
+        <td >{props.softwareDesign.Status}</td>
         <th>
         <Link to={"/viewSoftwareDesign/"+props.softwareDesign._id}>
               View 

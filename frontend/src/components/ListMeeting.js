@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Moment from 'moment';
 import axios from 'axios';
 const Meeting= props =>(
         <div className="card mt-2">
@@ -9,7 +10,7 @@ const Meeting= props =>(
         <div className="card-body" >
       
         <h4>{props.sn}. {props.meeting.Title} -{props.meeting.By}</h4>
-        <p align="right">{props.meeting.CreatedTime}</p>
+        <p align="right">{Moment(props.meeting.CreatedTime).format('YYYY-MM-DD')}</p>
         
          {/* <p className="text-muted ml-auto">-{props.update.By}</p> */}
           <hr></hr>

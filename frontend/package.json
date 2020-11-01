@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "cra-template": "1.0.3",
+    "date-fns": "^2.16.1",
+    "moment": "^2.29.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
@@ -33,5 +35,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://localhost:4000/"
+  "proxy": "http://localhost:4000/"
 }

@@ -4,15 +4,15 @@ import axios from 'axios';
 const Employee= props =>(
 
     <tr>
-        <th>{props.sn}</th>
-        <th >{props.employee.name}</th>
-        <th >{props.employee.email}</th>
+        <td>{props.sn}</td>
+        <td >{props.employee.name}</td>
+        <td >{props.employee.email}</td>
         
-        <th >{props.employee.post}</th>
-        <th >{props.employee.from}</th>
-        <th >{props.employee.to}</th>
-        <th >{props.employee.salary}</th>
-        <th >{props.employee.projectNo}</th>
+        <td >{props.employee.post}</td>
+        <td >{props.employee.from}</td>
+        <td >{props.employee.to}</td>
+        <td >{props.employee.salary}</td>
+        <td >{props.employee.projectNo}</td>
         <th>
         <Link to={"/viewEmployee/"+props.employee._id}>
               View 

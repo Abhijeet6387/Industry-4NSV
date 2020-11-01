@@ -98,8 +98,8 @@ class NavbarTwo extends Component {
                                 <li><a className="dropdown-item" href="#" > Employee Details </a>
                                 <ul className="submenu dropdown-menu">
                            
-                                    <li><Link className="dropdown-item" to="/pastEmployee">Ex Employees</Link></li>
-                                    <li><Link className="dropdown-item" to="/presentEmployee">Current Employees</Link></li>
+                                    <li><Link className="dropdown-item" to="/exEmployee">Ex Employees</Link></li>
+                                    <li><Link className="dropdown-item" to="/currentEmployee">Current Employees</Link></li>
                                 </ul>
                                 </li>
                                 <li>

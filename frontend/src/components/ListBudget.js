@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 const Budget= props =>(
     <tr>
-        <th>{props.sn}</th>
-        <th >{props.budget.item}</th>
-        <th >{props.budget.firstyear}</th>
-        <th >{props.budget.secondyear}</th>
-        <th >{props.budget.itemTotal}</th>
+        <td>{props.sn}</td>
+        <td >{props.budget.item}</td>
+        <td >{props.budget.firstyear}</td>
+        <td >{props.budget.secondyear}</td>
+        <td >{props.budget.itemTotal}</td>
         <th>
         <Link to={"/viewBudget/"+props.budget._id}>
               View 

@@ -3,12 +3,12 @@ import axios from 'axios';
 import { Link} from "react-router-dom";
 const MyComponent= props =>(
     <tr>
-        <th>{props.sn}</th>
-        <th >{props.component.Listname}</th>
-        <th >{props.component.Level}</th>
-        <th >{props.component.Item}</th>
-        <th >{props.component.Description}</th>
-        <th>{props.component.Drawing_number}</th>
+        <td>{props.sn}</td>
+        <td >{props.component.Listname}</td>
+        <td >{props.component.Level}</td>
+        <td >{props.component.Item}</td>
+        <td >{props.component.Description}</td>
+        <td>{props.component.Drawing_number}</td>
         <th>
         <Link to={"/viewComponent/"+props.component._id}>
               View 

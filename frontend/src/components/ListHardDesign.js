@@ -4,16 +4,16 @@ import axios from 'axios';
 
 const HardwareDesign= props =>(
     <tr>
-        <th >{props.sn }</th>
-        <th >{props.hardwareDesign.Specification }</th>
-        <th >{props.hardwareDesign.RequiredAt}</th>
-        <th >{props.hardwareDesign.PricePerUnit}</th>
-        <th >{props.hardwareDesign.NoOfUnits}</th>
-        <th >{props.hardwareDesign.Total}</th>
-        <th>{props.hardwareDesign.PurchasedQuantity}</th>
-        <th>{props.hardwareDesign.PriceInLakhs}</th>
-        <th>{props.hardwareDesign.BoughtFor}</th>
-        <th>{props.hardwareDesign.Status}</th>
+        <td >{props.sn }</td>
+        <td >{props.hardwareDesign.Specification }</td>
+        <td >{props.hardwareDesign.RequiredAt}</td>
+        <td >{props.hardwareDesign.PricePerUnit}</td>
+        <td >{props.hardwareDesign.NoOfUnits}</td>
+        <td >{props.hardwareDesign.Total}</td>
+        <td>{props.hardwareDesign.PurchasedQuantity}</td>
+        <td>{props.hardwareDesign.PriceInLakhs}</td>
+        <td>{props.hardwareDesign.BoughtFor}</td>
+        <td>{props.hardwareDesign.Status}</td>
         <th>
         <Link to={"/viewHardwareDesign/"+props.hardwareDesign._id}>
               View 
@@ -82,7 +82,8 @@ class ListHardDesign extends Component {
                                     <th scope="col">PurchasedQuantity</th>
                                     <th scope="col">PriceInLakhs</th>
                                     <th scope="col">BoughtFor</th>
-                                    <th scope="col">Status</th>                                   
+                                    <th scope="col">Status</th>  
+                                    <th scope="col">View</th>                                  
                                 </tr>
                             </thead>
                             <tbody>

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 const SoftwareMES= props =>(
     <tr>
-        <th>{props.sn}</th>
-        <th >{props.softwareMES.Softwares}</th>
-        <th >{props.softwareMES.Quantity}</th>
-        <th >{props.softwareMES.Price}</th>
-        <th >{props.softwareMES.Order}</th>
+        <td>{props.sn}</td>
+        <td >{props.softwareMES.Softwares}</td>
+        <td >{props.softwareMES.Quantity}</td>
+        <td >{props.softwareMES.Price}</td>
+        <td >{props.softwareMES.Order}</td>
         <th>
         <Link to={"/viewSoftwareMes/"+props.softwareMES._id}>
               View 

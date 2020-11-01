@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Moment from 'moment';
 class ViewEmployee extends Component {
     constructor(props){
         super(props);
@@ -8,11 +9,10 @@ class ViewEmployee extends Component {
                 email:'',
                 name:'',
                 post:'',
-                from:'',
-                to:'',
+                startDate:'',
+                endDate:'',
                 salary:'',
-                projectNo:'',
-                isOld:''
+                projectNo:''
             };
             this.changeHandler = this.changeHandler.bind(this);
             this.deleteHandler = this.deleteHandler.bind(this);
@@ -31,11 +31,10 @@ class ViewEmployee extends Component {
                    email:response.data.item.email,
                    name:response.data.item.name,
                    post:response.data.item.post,
-                   from:response.data.item.from,
-                   to:response.data.item.to,
+                   startDate:Moment(response.data.item.startDate).format('YYYY-MM-DD'),
+                   endDate: Moment(response.data.item.endDate).format('YYYY-MM-DD'),
                    salary:response.data.item.salary,
-                   projectNo:response.data.item.projectNo,
-                   isOld:response.data.item.isOld
+                   projectNo:response.data.item.projectNo
                    
                 });
                }
@@ -62,11 +61,10 @@ class ViewEmployee extends Component {
                 email:this.state.email,
                 name:this.state.name,
                 post:this.state.post,
-                from:this.state.from,
-                to:this.state.to,
+                startDate:this.state.startDate,
+                endDate:this.state.endDate,
                 salary:this.state.salary,
-                projectNo:this.state.projectNo,
-                isOld:this.state.isOld
+                projectNo:this.state.projectNo
             }
         
             axios.post('/employee/update/'+this.props.match.params.id, updated,{headers : { 
@@ -143,14 +141,14 @@ class ViewEmployee extends Component {
                                 <td >{this.state.post}</td>
                             </tr>
                             <tr>
-                                <td >From</td>
+                                <td >Start Date</td>
                                 <td >:</td>
-                                <td >{this.state.from}</td>
+                                <td >{this.state.startDate}</td>
                             </tr>
                             <tr>
-                                <td >To</td>
+                                <td >End Date</td>
                                 <td >:</td>
-                                <td >{this.state.to}</td>
+                                <td >{this.state.endDate}</td>
                             </tr>
                             <tr>
                                 <td >Salary</td>
@@ -162,11 +160,6 @@ class ViewEmployee extends Component {
                                 <td >:</td>
                                 <td >{this.state.projectNo}</td>
                             </tr>
-                            <tr>
-                                <td >Ex-Employee</td>
-                                <td >:</td>
-                                <td >{this.state.isOld}</td>
-                            </tr>
                         </tbody>
                     </table>
                     <div style={{display: "block",
@@ -174,7 +167,7 @@ class ViewEmployee extends Component {
                         marginRight: "auto",
                         width: "25%"}}>
     
-                          <button  type="button" className="btn btn-warning ml-2 mr-2" data-toggle="modal" data-target="#myModal">Edit This</button> 
+                          <button  type="button" className="btn btn-warning ml-2 mr-2" data-toggle="modal" data-target="#myModal">Edit</button> 
                           <div className="modal" id="myModal">
                             <div className="modal-dialog">
                               <div className="modal-content">
@@ -205,14 +198,14 @@ class ViewEmployee extends Component {
                                         placeholder="Enter post" name="post" value={this.state.post}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="from">From:</label>
-                                        <input className="form-control" id="from" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter from" name="from" value={this.state.from}/>
+                                        <label htmlFor="startDate">Start Date:</label>
+                                      <input className="form-control" id="startDate" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter in the form yyyy/mm/dd" name="startDate" value={this.state.startDate}/>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="to">To:</label>
-                                        <input className="form-control" id="to" type="text" onChange={this.changeHandler}
-                                        placeholder="Enter to" name="to" value={this.state.to}/>
+                                       <label htmlFor="endDate">End Date:</label>
+                                       <input className="form-control" id="endDate" type="text" onChange={this.changeHandler}
+                                        placeholder="Enter in the form yyyy/mm/dd" name="endDate" value={this.state.endDate}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="salary">Salary:</label>
@@ -223,13 +216,6 @@ class ViewEmployee extends Component {
                                         <label htmlFor="projectNo">Project No:</label>
                                         <input className="form-control" id="projectNo" type="text" onChange={this.changeHandler}
                                         placeholder="Enter projectNo" name="projectNo" value={this.state.projectNo}/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label htmlFor="isOld">Ex-employee:</label>
-                                        <select class="form-control" id="isOld" name="isOld" onChange={this.changeHandler} value={this.state.isOld}>
-                                           <option value ="true">Yes</option>
-                                           <option value ="false">No</option>
-                                        </select>
                                     </div>
                                     <button className="block" type="submit" style={{ display: "block",
                                     width: "100%",border: "none", backgroundColor:"#cd5c5c",padding: "14px 28px",    
@@ -242,7 +228,7 @@ class ViewEmployee extends Component {
                                 </div>
                             </div> 
                          </div>  
-                         <button  type="button" className="btn btn-danger ml-2 mr-2"  data-toggle="modal" data-target="#deletemodal">Delete This</button> 
+                         <button  type="button" className="btn btn-danger ml-2 mr-2"  data-toggle="modal" data-target="#deletemodal">Delete</button> 
                          <div className="modal fade" id="deletemodal" role="dialog">
                             <div className="modal-dialog modal-lg" role="content">
                                 <div className="modal-content">

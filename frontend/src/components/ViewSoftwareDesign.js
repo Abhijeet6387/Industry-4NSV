@@ -151,7 +151,7 @@ class ViewSoftwareDesign extends Component {
                     marginRight: "auto",
                     width: "25%"}}>
 
-                      <button  type="button" className="btn btn-warning ml-2 mr-2" data-toggle="modal" data-target="#myModal">Edit This</button> 
+                      <button  type="button" className="btn btn-warning ml-2 mr-2" data-toggle="modal" data-target="#myModal">Edit</button> 
                       <div className="modal" id="myModal">
                         <div className="modal-dialog">
                           <div className="modal-content">
@@ -201,7 +201,7 @@ class ViewSoftwareDesign extends Component {
                             </div>
                         </div> 
                      </div>  
-                     <button  type="button" className="btn btn-danger ml-2 mr-2"  data-toggle="modal" data-target="#deletemodal">Delete This</button> 
+                     <button  type="button" className="btn btn-danger ml-2 mr-2"  data-toggle="modal" data-target="#deletemodal">Delete</button> 
                      <div className="modal fade" id="deletemodal" role="dialog">
                         <div className="modal-dialog modal-lg" role="content">
                             <div className="modal-content">
