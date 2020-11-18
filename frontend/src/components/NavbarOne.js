@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import indianrail1 from '../images/indianrail1.png';
-import amblem from '../images/amblem.png';
-import iitk from '../images/iitk.png';
+import logo from '../images/nsvlogo.png';
+// import amblem from '../images/amblem.png';
+// import iitk from '../images/iitk.png';
 import axios from 'axios';
 
 class NavbarOne extends Component {
@@ -67,9 +67,9 @@ class NavbarOne extends Component {
                 
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <a className="navbar-brand mr-auto" href="#" style={{color: "#cd5c5c",fontSize:"30px"}}>
-                        <img className="img-fluid" src={indianrail1} width="50" height="50"/>
-                        <img className="img-fluid" src={amblem} width="50" height="50"/>
-                        <img className="img-fluid pr-2" src={iitk} width="50" height="50"/>
+                        <img className="img-fluid" src={logo} width="50" height="50"/>
+                        {/* <img className="img-fluid" src={amblem} width="50" height="50"/>
+                        <img className="img-fluid pr-2" src={iitk} width="50" height="50"/> */}
                         <b style={{textShadow: "2px 2px #e6adad"}}>INDUSTRY-4NSV</b>
                     </a>
                     <button
