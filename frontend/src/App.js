@@ -32,9 +32,9 @@ import AddHardMes from './components/AddHardMes';
 import ListBudget from './components/ListBudget';
 import ViewBudget from './components/ViewBudget';
 import AddBudget from './components/AddBudget';
-import ListEmployee from './components/ListEmployee';
+
 import ViewEmployee from './components/ViewEmployee';
-import AddEmployee from './components/AddEmployee';
+
 import ListMeeting from './components/ListMeeting';
 import ViewMeeting from './components/ViewMeeting';
 import AddMeeting from './components/AddMeeting';
@@ -52,7 +52,7 @@ import AddUpdateRUTAG from './components/AddUpdateRUTAG';
 import ListComponent from './components/ListComponent';
 import ViewComponent from './components/ViewComponent';
 import AddComponent from './components/AddComponent';
-import ListNewEmployee from './components/ListNewEmployee';
+
 import RequestList from './components/RequestList';
 import RequestAccess from './components/RequestAccess';
 import ListEmployeeNw from './components/ListEmployeeNw';
@@ -99,12 +99,7 @@ function App() {
           <Route path="/budget" component={ListBudget}/>
           <Route path="/viewBudget/:id" component={ViewBudget}/>
           <Route path="/addBudget" component={AddBudget}/>
-          
-          
-          <Route path="/pastEmployee" component={ListEmployee}/>
-          <Route path="/presentEmployee" component={ListNewEmployee}/>
-          <Route path="/viewEmployee/:id" component={ViewEmployee}/>
-          {/* <Route path="/addEmployee" component={AddEmployee}/> */}
+      
 
           <Route path="/update" component={ListUpdate}/>
           <Route path="/viewUpdate/:id" component={ViewUpdate}/>
@@ -132,6 +127,7 @@ function App() {
           <Route path="/currentEmployee" component={ListEmployeeNw}/>
           <Route path="/exEmployee" component={ListExEmployee}/>
           <Route path="/addEmployee" component={AddEmployeeNw}/>
+          <Route path="/viewEmployee/:id" component={ViewEmployee}/>
           
         </Switch>
         <Footer></Footer>

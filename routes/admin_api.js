@@ -1,20 +1,30 @@
 const bcrypt=require('bcrypt');
 
-const Event=require('../models/event_model');
+
+const budget_model = require('../models/budget_model');
 const Component= require('../models/component_model');
+const Event=require('../models/event_model');
+
 const HardwareDesign= require('../models/hardware_design_model');
 const HardwareMes= require('../models/hardware_MES_model');
+const meeting_model = require('../models/meeting_model');
+const Member= require('../models/member_model');
+
+const Employee= require('../models/new_employee_model.js');
+const Rmeeting_model = require('../models/RUTAG_meeting_model');
+const Rupdate_model = require('../models/RUTAG_update_model');
 const SoftwareDesign=require('../models/software_design_model');
 const SoftwareMes=require('../models/software_MES_model');
+
+const TMember= require('../models/temp_member_model');
+const update_model = require('../models/update_model');
 const User=require('../models/user_model');
-const Member= require('../models/member_model');
+
 const AdminBro = require('admin-bro')
 
 const AdminBroExpressjs = require('admin-bro-expressjs');
-const meeting_model = require('../models/meeting_model');
-const budget_model = require('../models/budget_model');
-const update_model = require('../models/update_model');
-const employee_model = require('../models/employee_model');
+
+
 
 
 AdminBro.registerAdapter(require('admin-bro-mongoose'))
@@ -90,12 +100,7 @@ const adminBro = new AdminBro({
           // We'll add this later
         }
       },
-      {
-        resource: Member,
-        options: {
-          // We'll add this later
-        }
-      },
+
       {
         resource: meeting_model,
         options: {
@@ -115,7 +120,31 @@ const adminBro = new AdminBro({
         }
       },
       {
-        resource: employee_model,
+        resource: Rupdate_model,
+        options: {
+          // We'll add this later
+        }
+      },
+      {
+        resource: Rmeeting_model,
+        options: {
+          // We'll add this later
+        }
+      },
+      {
+        resource: Member,
+        options: {
+          // We'll add this later
+        }
+      },
+      {
+        resource: TMember,
+        options: {
+          // We'll add this later
+        }
+      },
+      {
+        resource: Employee,
         options: {
           // We'll add this later
         }
